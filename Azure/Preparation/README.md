@@ -16,39 +16,42 @@ Azureを使用するための準備(CLIのログイン方法、サブスクリ�
 ※コマンド実行の際に、下記内容でユーザー名とパスワードを指定することも可能である。
 
 　az login --user <username> --password <password>
- 
+
+![Preparation](./Preparation_01.png)
 
 (2)	テナントIDやサブスクリプション情報を表示する。
 
 「az account list -o table」を実行する。
  
-
+![Preparation](./Preparation_02.png)
 
 (3)	ユーザーのオブジェクトIDを取得する。
 
 「az ad user show --id <ユーザUPN> --query id --output tsv」を実行する。
- 
+
+ ![Preparation](./Preparation_03.png)
 
 (4)	ユーザーにサブスクリプション権限を付与する。
 
 「az role assignment create --assignee <ユーザーのオブジェクトIDまたはUPN> --role "Contributor" --scope /subscriptions/<サブスクリプションID>」を実行する。
- 
+
+ ![Preparation](./Preparation_04.png)
  
 (5)	ロールの権限内容を表示する。
 
 「az role definition list --name "<ロール名>"」を実行する。
  
-
+ ![Preparation](./Preparation_05.png)
 
 (6)	カスタムロールのみ表示する。
 
 「az role definition list --query "[?roleType=='CustomRole'].{Name:roleName, Type:roleType}" --output table」を実行する。
  
- 
+ ![Preparation](./Preparation_06.png) 
 
  
  
-3.1.2	サブスクリプション付与(GUI)
+##	サブスクリプション付与(GUI)
 
 Azure内のリソースを操作するうえでユーザーへのサブスクリプションの付与が必須である。
 
@@ -56,43 +59,29 @@ Azure内のリソースを操作するうえでユーザーへのサブスクリ
 
 (1)	Azure Portalにログインする。
 
-(2)	「サブスクリプション」をクリックする。下記画面に表示されない場合は、検索窓で「サブスクリプション」等入力してサブスクリプションサービスのページに移動する。
-
-  
-
- 
+(2)	「サブスクリプション」をクリックする。表示されない場合は、検索窓で「サブスクリプション」等入力してサブスクリプションサービスのページに移動する。
 
 (3)	サブスクリプション名をクリックする。
-  
 
 (4)	「アクセス制御(IAM)」をクリックする。
- 
 
 (5)	「ロールの割り当て」⇒「追加」をクリックする。
- 
 
 (6)	選択肢が表示されたら「ロール割り当ての追加」をクリックする。
  
-
 (7)	特権管理者ロールタブの共同作成者を選択し、「次へ」をクリックする。
 
- 
+ ![Preparation](./Preparation_07.png) 
 
 (8)	「＋メンバーを選択する」をクリックし、画面右に表示されるユーザー名をクリックする。
 
 (9)	「選択したメンバー」に該当のユーザーが表示されたら「選択」をクリックする。
 
-(10)名前の下にユーザーが表示されたら、「レビューと割り当て」を2回クリックする。
-
-
- 
+(10)名前の下にユーザーが表示されたら、「レビューと割り当て」を2回クリックする。 
 
 (11)「共同作成者」下に、先程追加したユーザーが表示されたら、アクセス権付与完了である。
 
-  
-
-今まで見られなかったサービスページが閲覧可能になる。
-
+![Preparation](./Preparation_08.png)   
  　　　　　 
  
 3.1.3	Role備考
@@ -102,13 +91,11 @@ Azureユーザー内で、アクセス権限(IAM)を編集できるのは、デ�
 他のユーザーでIAMの付与を行いたい場合、カスタムロールを作成し、ユーザーに権限を付与する必要がある。
 
 下記に、GUIでカスタムロールを作成する手順を記載する。
-
-※一般ユーザーの場合、下記のように編集ができない。
  
 
 Admin権限のあるユーザーで、以下のような形式でJSONに記述する。
  
-
+![Preparation](./Preparation_09.png)   
 
 ●ロールの管理を行う上で必要な権限は以下の通りである。
 
@@ -118,9 +105,13 @@ Admin権限のあるユーザーで、以下のような形式でJSONに記述�
 
 "Microsoft.Authorization/roleAssignments/read"
 
- 
+![Preparation](./Preparation_10.png)    
 
 
 ●その他、指定したリソースの削除ロックを編集できる、削除できる権限は以下の通りである。
+
 "Microsoft.Authorization/locks/write"
+
  "Microsoft.Authorization/locks/delete"
+
+![Preparation](./Preparation_11.png)    
