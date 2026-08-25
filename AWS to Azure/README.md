@@ -28,7 +28,7 @@ aws ec2 create-vpn-gateway --type ipsec.1 --tag-specifications 'ResourceType=vpn
 
 下記コマンドを実行する。
 
-aws ec2 attach-vpn-gateway --vpn-gateway-id vgw-xxxxxxxxxxxxxxxxx --vpc-id vpc-xxxxxxxxxxxxxxxxx
+aws ec2 attach-vpn-gateway `--vpn-gateway-id` vgw-xxxxxxxxxxxxxxxxx `--vpc-id` vpc-xxxxxxxxxxxxxxxxx
 
  ![AWS to Azure](./AWS to Azure_03.png) 
 
@@ -42,11 +42,11 @@ aws ec2 attach-vpn-gateway --vpn-gateway-id vgw-xxxxxxxxxxxxxxxxx --vpc-id vpc-x
 
 下記コマンドを実行する。
 
-aws ec2 create-customer-gateway --type ipsec.1 --public-ip <Azure VPN Gateway の Public IP> --bgp-asn 65000
+aws ec2 create-customer-gateway `--type` ipsec.1 `--public-ip` <Azure VPN Gateway の Public IP> `--bgp-asn` 65000
 
 例：
 
-aws ec2 create-customer-gateway --type ipsec.1 --public-ip 20.18.8.140 --bgp-asn 65000
+aws ec2 create-customer-gateway `--type` ipsec.1 --public-ip 20.18.8.140 `--bgp-asn` 65000
  
  ![AWS to Azure](./AWS to Azure_05.png)  
  
@@ -60,7 +60,7 @@ aws ec2 create-customer-gateway --type ipsec.1 --public-ip 20.18.8.140 --bgp-asn
 
 下記コマンドを実行する。
 
-aws ec2 create-vpn-connection --type ipsec.1 --customer-gateway-id cgw-xxxx --vpn-gateway-id vgw-xxxx --options StaticRoutesOnly=<true or false>
+aws ec2 create-vpn-connection `--type` ipsec.1 `--customer-gateway-id` cgw-xxxx `--vpn-gateway-id` vgw-xxxx `--options` StaticRoutesOnly=<true or false>
 
 補足：
 
@@ -76,7 +76,7 @@ StaticRoutesOnly　　　　true → BGPを無効　false → BGPを有効
 
 下記コマンドを実行する。
 
-aws ec2 create-vpn-connection-route --vpn-connection-id vpn-xxxx --destination-cidr-block <Azure VNet CIDR>
+aws ec2 create-vpn-connection-route `--vpn-connection-id` vpn-xxxx `--destination-cidr-block` <Azure VNet CIDR>
  
  ![AWS to Azure](./AWS to Azure_10.png)  
 
@@ -86,7 +86,7 @@ aws ec2 create-vpn-connection-route --vpn-connection-id vpn-xxxx --destination-c
 
 下記コマンドを実行する。
 
-aws ec2 describe-vpn-connections --vpn-connection-id vpn-xxxx
+aws ec2 describe-vpn-connections `--vpn-connection-id` vpn-xxxx
 
  ![AWS to Azure](./AWS to Azure_12.png)  
  
@@ -96,11 +96,11 @@ aws ec2 describe-vpn-connections --vpn-connection-id vpn-xxxx
 
 下記コマンドを実行する。
 
-aws ec2 create-route --route-table-id rtb-xxxxxxxx --destination-cidr-block <Azure VNet CIDR> --gateway-id vgw-xxxxxxxx
+aws ec2 create-route `--route-table-id` rtb-xxxxxxxx `--destination-cidr-block` <Azure VNet CIDR> `--gateway-id` vgw-xxxxxxxx
 
 例：
 
-aws ec2 create-route --route-table-id rtb-00dae7de4de44cbf4 --destination-cidr-block 10.0.0.0/16 --gateway-id vgw-0f5677bcf566174f5 
+aws ec2 create-route `--route-table-id` rtb-00dae7de4de44cbf4 `--destination-cidr-block` 10.0.0.0/16 `--gateway-id` vgw-0f5677bcf566174f5 
 
  ![AWS to Azure](./AWS to Azure_13.png)  
  
@@ -119,10 +119,10 @@ aws ec2 create-route --route-table-id rtb-00dae7de4de44cbf4 --destination-cidr-b
 
 下記コマンドを実行する。
 
-az network local-gateway create --resource-group <リソースグループ名> --name <ローカルゲートウェイ名> --gateway-ip-address <対抗側のVPNデバイスのパブリックIP> --local-address-prefixes <オンプレミス側のネットワークプレフィックス>
+az network local-gateway create `--resource-group` <リソースグループ名> --name <ローカルゲートウェイ名> `--gateway-ip-address` <対抗側のVPNデバイスのパブリックIP> `--local-address-prefixes` <オンプレミス側のネットワークプレフィックス>
 
 例：
-az network local-gateway create --resource-group test-group --name test-lgy --gateway-ip-address 13.231.59.159 --local-address-prefixes 172.32.0.0/16 --location japaneast
+az network local-gateway create `--resource-group` test-group `--name` test-lgy `--gateway-ip-address` 13.231.59.159 `--local-address-prefixes` 172.32.0.0/16 `--location` japaneast
  
 ![AWS to Azure](./AWS to Azure_14.png)  
 
@@ -156,11 +156,11 @@ o	ExpressRoute接続: プライベートネットワーク経由での接続を�
 
 下記コマンドを実行する。
 
-az network vpn-connection create --resource-group <リソースグループ名>--name <接続名> --vnet-gateway1 <仮想ネットワークゲートウェイ名> --local-gateway2 <ローカルネットワークゲートウェイ名> --shared-key "<事前共有鍵(AWS)>" --location japaneast
+az network vpn-connection create `--resource-group` <リソースグループ名> `--name` <接続名> `--vnet-gateway1` <仮想ネットワークゲートウェイ名> `--local-gateway2` <ローカルネットワークゲートウェイ名> `--shared-key` "<事前共有鍵(AWS)>" `--location` japaneast
 
 例：
 
-az network vpn-connection create --resource-group test-group --name test-Connection --vnet-gateway1 test-VnetGateway --local-gateway2 test-lgy --shared-key "m3m26hxBmqpUILyrwX6ge_A4wdXit76G" --location japaneast  
+az network vpn-connection create `--resource-group` test-group `--name` test-Connection `--vnet-gateway1` test-VnetGateway `--local-gateway2` test-lgy `--shared-key` "m3m26hxBmqpUILyrwX6ge_A4wdXit76G" `--location` japaneast  
 
  ![AWS to Azure](./AWS to Azure_18.png)  
 
@@ -168,7 +168,7 @@ az network vpn-connection create --resource-group test-group --name test-Connect
 
 補足：Tunnel 1のみでも可。
 
-az network vpn-connection create --resource-group test-group --name test-Connection02 --vnet-gateway1 test-VnetGateway --local-gateway2 test-lgy02 --shared-key "BqgpCL6MDbGMXVOZF51sIsjICyBl_aXs" --location japaneast 
+az network vpn-connection create `--resource-group` test-group `--name` test-Connection02 `--vnet-gateway1` test-VnetGateway `--local-gateway2` test-lgy02 `--shared-key` "BqgpCL6MDbGMXVOZF51sIsjICyBl_aXs" `--location` japaneast 
 
  ![AWS to Azure](./AWS to Azure_19.png)  
 
@@ -181,7 +181,7 @@ az network vpn-connection create --resource-group test-group --name test-Connect
 
 下記コマンドを実行する。
 
-az network route-table create --resource-group <リソースグループ名> --name <ルートテーブル名> --location japaneast
+az network route-table create `--resource-group` <リソースグループ名> `--name` <ルートテーブル名> `--location` japaneast
 
  ![AWS to Azure](./AWS to Azure_21.png) 
 
@@ -189,11 +189,11 @@ az network route-table create --resource-group <リソースグループ名> --n
 
 下記コマンドを実行する。
 
-az network route-table route create --resource-group <リソースグループ名> --route-table-name <ルートテーブル名> --name <関連名> --address-prefix <AWS VPC CIDR> --next-hop-type VirtualNetworkGateway
+az network route-table route create `--resource-group` <リソースグループ名> `--route-table-name` <ルートテーブル名> `--name` <関連名> `--address-prefix` <AWS VPC CIDR> `--next-hop-type` VirtualNetworkGateway
 
 例:
 
-az network route-table route create --resource-group test-group --route-table-name test-route-table --name aws-connection --address-prefix 172.32.0.0/16 --next-hop-type VirtualNetworkGateway
+az network route-table route create `--resource-group` test-group `--route-table-name` test-route-table `--name` aws-connection `--address-prefix` 172.32.0.0/16 `--next-hop-type` VirtualNetworkGateway
 
  ![AWS to Azure](./AWS to Azure_22.png) 
 
@@ -201,7 +201,7 @@ az network route-table route create --resource-group test-group --route-table-na
 
 下記コマンドを実行する。
 
-az network vnet subnet update --resource-group test-group --vnet-name test-vnet --name GatewaySubnet --route-table test-route-table
+az network vnet subnet update `--resource-group` test-group `--vnet-name` test-vnet `--name` GatewaySubnet `--route-table` test-route-table
  
  ![AWS to Azure](./AWS to Azure_23.png) 
 
@@ -209,7 +209,7 @@ az network vnet subnet update --resource-group test-group --vnet-name test-vnet 
 
 test-subnet にtest-route-table を関連付ける
 
-az network vnet subnet update --resource-group test-group --vnet-name test-vnet --name test-subnet --route-table test-route-table
+az network vnet subnet update `--resource-group` test-group `--vnet-name` test-vnet `--name` test-subnet `--route-table` test-route-table
  
 
  ![AWS to Azure](./AWS to Azure_24.png)  
@@ -224,15 +224,15 @@ az network vnet subnet update --resource-group test-group --vnet-name test-vnet 
 
 ※実行しなくても可、おそらく。
 
-az network nsg rule create --resource-group test-group --nsg-name test-nsg --name AllowIPSec500 --priority 100 --direction Inbound --access Allow --protocol Udp --source-address-prefix '*' --source-port-range '*' --destination-address-prefix '*' --destination-port-range 500
+az network nsg rule create `--resource-group` test-group `--nsg-name` test-nsg `--name` AllowIPSec500 `--priority` 100 `--direction` Inbound `--access` Allow `--protocol` Udp `--source-address-prefix` '*' `--source-port-range` '*' `--destination-address-prefix` '*' `--destination-port-range` 500
  
   ![AWS to Azure](./AWS to Azure_27.png)  
 
-az network nsg rule create --resource-group test-group --nsg-name test-nsg --name AllowIPSec4500 --priority 110 --direction Inbound --access Allow --protocol Udp --source-address-prefix '*' --source-port-range '*' --destination-address-prefix '*' --destination-port-range 4500
+az network nsg rule create `--resource-group test-group` `--nsg-name` test-nsg `--name` AllowIPSec4500 `--priority` 110 `--direction` Inbound `--access` Allow `--protocol` Udp `--source-address-prefix` '*' `--source-port-range` '*' `--destination-address-prefix` '*' `--destination-port-range` 4500
  
   ![AWS to Azure](./AWS to Azure_28.png)  
 
-az network nsg rule create --resource-group test-group --nsg-name test-nsg --name Allow-ICMP-From-AWS --priority 120 --direction Inbound --access Allow --protocol ICMP --source-address-prefixes 172.32.0.0/16 --destination-address-prefixes '*' --source-port-ranges '*' --destination-port-ranges '*'
+az network nsg rule create `--resource-group` test-group `--nsg-name` test-nsg `--name` Allow-ICMP-From-AWS `--priority` 120 `--direction` Inbound `--access` Allow `--protocol` ICMP `--source-address-prefixes` 172.32.0.0/16 `--destination-address-prefixes` '*' `--source-port-ranges` '*' `--destination-port-ranges` '*'
  
 ![AWS to Azure](./AWS to Azure_29.png)  
 
