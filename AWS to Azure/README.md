@@ -157,7 +157,7 @@ o	ExpressRoute接続: プライベートネットワーク経由での接続を�
 
 下記コマンドを実行する。
 
-az network vpn-connection create `--resource-group` リソースグループ名 `--name` 接続名 `--vnet-gateway1` 仮想ネットワークゲートウェイ名 `--local-gateway2` ローカルネットワークゲートウェイ名 `--shared-key` "事前共有鍵(AWS)" `--location` japaneast
+az network vpn-connection create `--resource-group` リソースグループ名 `--name` 接続名 `--vnet-gateway1` 仮想ネットワークゲートウェイ名 `--local-gateway2` ローカルネットワークゲートウェイ名 `--shared-key` 事前共有鍵(AWS) `--location` japaneast
 
 例：
 
