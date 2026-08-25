@@ -5,9 +5,9 @@
 
 下記コマンドを実行する。
 
-az network vnet create -g <リソースグループ名> -n <Vnet名> --address-prefix <プレフィックス> --subnet-name <サブネット名> --subnet-prefixes <サブネット> --location japaneast
+az network vnet create -g <リソースグループ名> -n <Vnet名> --address-prefix <プレフィックス> `--subnet-name` <サブネット名> `--subnet-prefixes` <サブネット> `--location` japaneast
 
-例：az network vnet create -g testResourceGroup -n test-Vnet --address-prefix 10.0.0.0/16 --subnet-name test-subnet-1 --subnet-prefixes 10.0.0.0/24 --location japaneast
+例：az network vnet create -g testResourceGroup -n test-Vnet --address-prefix 10.0.0.0/16 `--subnet-name` test-subnet-1 `--subnet-prefixes` 10.0.0.0/24 `--location` japaneast
  
 ![virtual_network](./virtual_network_01.png) 
 
@@ -17,7 +17,7 @@ az network vnet create -g <リソースグループ名> -n <Vnet名> --address-p
  
 下記コマンドを実行する。
 
-az network nsg create --resource-group <リソースグループ名> --name <NSG名> --location japaneast
+az network nsg create `--resource-group` <リソースグループ名> `--name` <NSG名> `--location` japaneast
  
 ![virtual_network](./virtual_network_02.png) 
  
@@ -27,17 +27,17 @@ az network nsg create --resource-group <リソースグループ名> --name <NSG
 
 az network nsg rule create 
 
-  --resource-group <リソースグループ名> 
-  --nsg-name <NSG名> 
-  --name <ルール名> 
-  --priority <優先度（100〜4096）> 
-  --direction <Inbound | Outbound> 
-  --access <Allow | Deny> 
-  --protocol <Tcp | Udp | * > 
-  --source-address-prefixes <送信元IPまたはCIDR> 
-  --source-port-ranges <送信元ポート> 
-  --destination-address-prefixes <宛先IPまたはCIDR> 
-  --destination-port-ranges <宛先ポート>
+  `--resource-group` <リソースグループ名> 
+  `--nsg-name` <NSG名> 
+  `--name` <ルール名> 
+  `--priority` <優先度（100〜4096）> 
+  `--direction` <Inbound | Outbound> 
+  `--access` <Allow | Deny> 
+  `--protocol` <Tcp | Udp | * > 
+  `--source-address-prefixes` <送信元IPまたはCIDR> 
+  `--source-port-ranges` <送信元ポート> 
+  `--destination-address-prefixes` <宛先IPまたはCIDR> 
+  `--destination-port-ranges` <宛先ポート>
 
 例：
 
