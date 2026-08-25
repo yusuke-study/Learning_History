@@ -116,7 +116,7 @@ Jsonファイルを作成する。（例）
 
 EC2のフルアクセス権限
 
-
+[`EC2-full-access-policy.json ダウンロード`](./EC2-full-access-policy.json)
 
 (6)	ポリシーを作成する。
 「aws iam create-policy --policy-name <ポリシー名> --policy-document file://<ファイルパス>」を実行する。
@@ -137,11 +137,51 @@ EC2のフルアクセス権限
 
 IAMポリシーの基本構造（JSON）　一例  ※細かく設定する場合
 
-
+[`ポリシー ダウンロード`](./Detailed policies.json)
 
 
 
 ## IAM ロール
 
 
-## AWS Organizations
+IAMロールに関連するコマンドを記載する。
+
+(1)	IAMロールの一覧表示をする。
+「aws iam list-roles」を実行する。
+
+![IAM](./IAM_22.png)  
+
+(2)	IAMロール名だけ出力する。
+「aws iam list-roles  --query 'Roles[*].RoleName'」を実行する。
+
+![IAM](./IAM_23.png)  
+
+(3)	信頼関係(AssumeRoleポリシー)を.jsonで定義する。
+
+[`ポリシー ダウンロード`](./Trust.json)
+
+(4)	IAM ロールの作成を行う。
+
+「aws iam create-role --role-name ロール名 --assume-role-policy-document file:// <ファイルパス>」を実行する。
+ 
+![IAM](./IAM_24.png)  
+
+![IAM](./IAM_25.png)  
+ 
+(5)	ポリシーのアタッチを行う。
+
+「aws iam attach-role-policy --policy-arn arn:aws:iam::aws:policy/<ポリシー名>　--role-name <ロール名>」を実行する。
+
+※カスタムポリシーの場合は
+
+「aws iam attach-role-policy --policy-arn arn:<テナントID>:iam::aws:policy/<ポリシー名>　--role-name <ロール名>」を実行する。
+ 
+![IAM](./IAM_26.png)  
+
+![IAM](./IAM_27.png)  
+ 
+(6)	アタッチされているマネージドポリシーの一覧を表示する。
+
+「aws iam list-attached-role-policies --role-name <ロール名>」を実行する。
+
+![IAM](./IAM_28.png)  
