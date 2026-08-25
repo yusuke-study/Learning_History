@@ -28,25 +28,15 @@ az network nsg create --resource-group <リソースグループ名> --name <NSG
 az network nsg rule create 
 
   --resource-group <リソースグループ名> 
-  
   --nsg-name <NSG名> 
-  
   --name <ルール名> 
-  
   --priority <優先度（100〜4096）> 
-  
   --direction <Inbound | Outbound> 
-  
   --access <Allow | Deny> 
-  
   --protocol <Tcp | Udp | * > 
-  
   --source-address-prefixes <送信元IPまたはCIDR> 
-  
   --source-port-ranges <送信元ポート> 
-  
   --destination-address-prefixes <宛先IPまたはCIDR> 
-  
   --destination-port-ranges <宛先ポート>
 
 例：
