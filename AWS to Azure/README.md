@@ -16,6 +16,7 @@ VPC、EC2、インターネットゲートウェイ、ルートテーブルの�
 (1)	Virtual Private Gateway(仮想プライベートゲートウェイ) の作成を行う
 
 下記コマンドを実行する。
+
 aws ec2 create-vpn-gateway --type ipsec.1 --tag-specifications 'ResourceType=vpn-gateway,Tags=[{Key=Name,Value=MyVGW}]'
 
 
