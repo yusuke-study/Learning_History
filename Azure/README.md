@@ -11,4 +11,7 @@
   - [仮想ネットワーク/仮想マシン関連のコマンドライン操作](./virtual_network/)
   - [ExpressRouteメモ](./ExpressRoute/)
 
-ストレージ
+- ストレージ
+
+- AWSとAzure接続検証
+  - [AWSとAzure接続検証](../AWS to Azure)
