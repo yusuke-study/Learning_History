@@ -36,7 +36,8 @@ Azureを使用するための準備(CLIのログイン方法、サブスクリ�
 「az role assignment create --assignee <ユーザーのオブジェクトIDまたはUPN> --role "Contributor" --scope /subscriptions/<サブスクリプションID>」を実行する。
 
  ![Preparation](./Preparation_04.png)
- 
+
+
 (5)	ロールの権限内容を表示する。
 
 「az role definition list --name "<ロール名>"」を実行する。
