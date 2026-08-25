@@ -1,4 +1,4 @@
-3.3.1	仮想ネットワーク(Vnet)　 
+##	仮想ネットワーク(Vnet)　 
  
 
 (1)	仮想ネットワークを作成する。
@@ -11,7 +11,7 @@ az network vnet create -g <リソースグループ名> -n <Vnet名> --address-p
  
 ![virtual_network](./virtual_network_01.png) 
 
-3.3.2	ネットワークセキュリティグループ (NSG)　 
+##	ネットワークセキュリティグループ (NSG)　 
 
 (1)	ネットワークセキュリティグループ(NSG)を作成する。
  
