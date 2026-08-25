@@ -9,5 +9,6 @@
 
 - 仮想ネットワーク/仮想マシン
   - [仮想ネットワーク/仮想マシン関連のコマンドライン操作](./virtual_network/)
+  - [ExpressRouteメモ](./ExpressRoute/)
 
 ストレージ
