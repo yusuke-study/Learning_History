@@ -14,15 +14,15 @@ EFSは主にLinux環境向けに設計されており、NFS（Network File Syste
 
 下記コマンドを実行する。
 
-aws efs create-file-system --creation-token <トークン名> --performance-mode generalPurpose --throughput-mode bursting --encrypted --tags Key=Name,Value=<EFS名> --region ap-northeast-1
+aws efs create-file-system `--creation-token` <トークン名> `--performance-mode` generalPurpose `--throughput-mode` bursting --encrypted `--tags Key=Name,Value=<EFS名>` `--region ap-northeast-1`
 
 備考
 
---performance-mode: generalPurpose（汎用）または maxIO（高スループット）を指定。
+`--performance-mode`: generalPurpose（汎用）または maxIO（高スループット）を指定。
 
---throughput-mode: bursting（バースト）または provisioned（プロビジョンド）を指定。
+`--throughput-mode`: bursting（バースト）または provisioned（プロビジョンド）を指定。
 
---encrypted：暗号化を有効化
+`--encrypted`：暗号化を有効化
  
 ![EFS](./EFS_01.png) 
 
@@ -34,7 +34,7 @@ aws efs create-file-system --creation-token <トークン名> --performance-mode
 
 下記コマンドを実行する。
 
-aws efs put-backup-policy --file-system-id <ファイルシステムID> --backup-policy Status="ENABLED"
+aws efs put-backup-policy `--file-system-id` <ファイルシステムID> `--backup-policy` Status="ENABLED"
 
 ![EFS](./EFS_03.png)
 
@@ -42,7 +42,7 @@ aws efs put-backup-policy --file-system-id <ファイルシステムID> --backup
 
 下記のコマンドを実行する。
 
-aws efs describe-backup-policy --file-system-id <ファイルシステムID>
+aws efs describe-backup-policy `--file-system-id` <ファイルシステムID>
  
 ![EFS](./EFS_04.png)
 
@@ -50,7 +50,7 @@ aws efs describe-backup-policy --file-system-id <ファイルシステムID>
 
 下記コマンドを実行する。
 
-aws efs describe-lifecycle-configuration --file-system-id <ファイルシステムID>
+aws efs describe-lifecycle-configuration `--file-system-id` <ファイルシステムID>
  
 ![EFS](./EFS_05.png)
 
@@ -64,7 +64,7 @@ aws efs describe-file-systems
 
 もしくは
 
-aws efs describe-file-systems --file-system-id　<ファイルシステムID>
+aws efs describe-file-systems `--file-system-id`　<ファイルシステムID>
 
 ![EFS](./EFS_07.png)
 
@@ -72,7 +72,7 @@ aws efs describe-file-systems --file-system-id　<ファイルシステムID>
 
 下記コマンドを実行する。
 
-aws efs describe-file-systems --query "FileSystems[*].{ID:FileSystemId,Created:CreationTime,Performance:PerformanceMode,Size:SizeInBytes.Value}" --output table
+aws efs describe-file-systems `--query` "FileSystems[*].{ID:FileSystemId,Created:CreationTime,Performance:PerformanceMode,Size:SizeInBytes.Value}" `--output` table
 
 ![EFS](./EFS_08.png) 
 
@@ -80,21 +80,21 @@ aws efs describe-file-systems --query "FileSystems[*].{ID:FileSystemId,Created:C
 
 下記コマンドを実行する。
 
-aws efs create-mount-target --file-system-id <ファイルシステムID> --subnet-id <サブネットID> --security-groups <セキュリティグループ>
+aws efs create-mount-target `--file-system-id` <ファイルシステムID> `--subnet-id` <サブネットID> `--security-groups` <セキュリティグループ>
  
 
 (8)	マウントターゲットを確認する。
 
 下記コマンドを実行する。
 
-aws efs describe-mount-targets --file-system-id <ファイルシステムID>
+aws efs describe-mount-targets `--file-system-id` <ファイルシステムID>
  
 
 (9)	マウントターゲットの主要情報の確認
 
 下記コマンドを実行する。
 
-aws efs describe-mount-targets --file-system-id <ファイルシステムID> --query "MountTargets[*].{ID:MountTargetId,Subnet:SubnetId,AZ:AvailabilityZoneId,IP:IpAddress}" --output table
+aws efs describe-mount-targets `--file-system-id` <ファイルシステムID> --query "MountTargets[*].{ID:MountTargetId,Subnet:SubnetId,AZ:AvailabilityZoneId,IP:IpAddress}" `--output` table
  
 2.5.2.2	EFSアクセス確認
 
@@ -102,7 +102,7 @@ aws efs describe-mount-targets --file-system-id <ファイルシステムID> --q
 
 下記コマンドを実行する。
 
-aws ec2 authorize-security-group-ingress --group-id <セキュリティグループID> --protocol tcp --port 2049 --cidr xxx.xxx.xxx.xxx/xx
+aws ec2 authorize-security-group-ingress `--group-id` <セキュリティグループID> `--protocol` tcp `--port` 2049 `--cidr` xxx.xxx.xxx.xxx/xx
  
 
 (2)	セキュリティグループの確認を行う。
@@ -111,7 +111,7 @@ aws ec2 authorize-security-group-ingress --group-id <セキュリティグルー
 
 下記コマンドを実行する。
 
-aws ec2 describe-security-groups --query "SecurityGroups[*].{ID:GroupId,Name:GroupName,Inbound:IpPermissions[*].{Protocol:IpProtocol,Port:FromPort,CIDR:IpRanges[*].CidrIp}}" --output json
+aws ec2 describe-security-groups `--query` "SecurityGroups[*].{ID:GroupId,Name:GroupName,Inbound:IpPermissions[*].{Protocol:IpProtocol,Port:FromPort,CIDR:IpRanges[*].CidrIp}}" `--output` json
  
 
 (3)	LinuxにNFSクライアントをインストールする。
@@ -144,7 +144,7 @@ aws ec2 describe-security-groups --query "SecurityGroups[*].{ID:GroupId,Name:Gro
 
 下記コマンドを実行する。
 
-aws efs delete-mount-target --mount-target-id <マウントターゲットID>
+aws efs delete-mount-target `--mount-target-id` <マウントターゲットID>
  
 
 (2)	EFSの削除
