@@ -20,7 +20,7 @@ Windows Server、Linux、AWS、Azure、Microsoft 365、などの構築・運用�
  
 - Terraform
 
-- [学習用Webページ](./WebPage/)
+- [Web制作学習](./WebPage/)
 
 
  
