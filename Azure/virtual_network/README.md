@@ -68,6 +68,7 @@ az network nsg show --resource-group <リソースグループ名> --name <NSG�
 ![virtual_network](./virtual_network_07.png)  
 
 ・すべてのルールを横並びに出力する場合、下記を実行する。
+
 $nsg = az network nsg show `
   --resource-group <リソースグループ名> `
   --name <NSG名> `
