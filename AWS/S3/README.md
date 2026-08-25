@@ -19,16 +19,19 @@
  ![S3](./S3_01.png)
 
 (2)	汎用バケットを一覧表示する。
+
 「aws s3api list-buckets --query "Buckets[*].Name" --output text」を実行する。
  
 ![S3](./S3_02.png)
 
 (3)	汎用バケットを削除する。
+
 「aws s3api delete-bucket --bucket  <バケット名>」を実行する。
  
 ![S3](./S3_03.png)
 
 (4)	汎用バケット内にファイルをアップロードする。
+
 「aws s3 cp <ローカルのファイル名> s3://<バケット名>/<ファイル名>」を実行する。
  
 ![S3](./S3_04.png)
@@ -36,6 +39,7 @@
 ![S3](./S3_05.png)
 
 (5)	パブリックアクセスブロックの解除を設定する。
+
 「aws s3api delete-public-access-block --bucket <バケット名>」を実行する。
 
 ![S3](./S3_06.png)
@@ -97,6 +101,7 @@ aws s3api put-bucket-lifecycle-configuration --bucket <バケット名> --lifecy
 ![S3](./S3_16.png)
 
 (9)静的ウェブサイトホスティングを有効化する。
+
 「aws s3 website s3://<バケット名>/ --index-document index.html --error-document error.html」を実行する。
  
 ![S3](./S3_17.png)
