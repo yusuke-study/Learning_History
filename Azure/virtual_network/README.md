@@ -68,10 +68,10 @@ az network nsg show --resource-group <リソースグループ名> --name <NSG�
 
 ・すべてのルールを横並びに出力する場合、下記を実行する。
 
-$nsg = az network nsg show `
-  --resource-group <リソースグループ名> `
-  --name <NSG名> `
-  --output json | ConvertFrom-Json
+$nsg = az network nsg show 
+  `--resource-group` <リソースグループ名> 
+  `--name` <NSG名> `
+  `--output` json | ConvertFrom-Json
 
 $allRules = $nsg.securityRules + $nsg.defaultSecurityRules
 
