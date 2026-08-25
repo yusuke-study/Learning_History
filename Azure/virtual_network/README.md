@@ -26,7 +26,6 @@ az network nsg create `--resource-group` <リソースグループ名> `--name` 
 下記コマンドを実行する。
 
 az network nsg rule create 
-
   `--resource-group` <リソースグループ名> 
   `--nsg-name` <NSG名> 
   `--name` <ルール名> 
