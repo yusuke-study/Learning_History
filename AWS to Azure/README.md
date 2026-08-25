@@ -43,7 +43,7 @@ aws ec2 attach-vpn-gateway `--vpn-gateway-id` vgw-xxxxxxxxxxxxxxxxx `--vpc-id` v
 
 下記コマンドを実行する。
 
-aws ec2 create-customer-gateway `--type` ipsec.1 `--public-ip` <Azure VPN Gateway の Public IP> `--bgp-asn` 65000
+aws ec2 create-customer-gateway `--type` ipsec.1 `--public-ip` Azure VPN Gateway の Public IP `--bgp-asn` 65000
 
 例：
 
@@ -65,7 +65,7 @@ aws ec2 create-vpn-connection `--type` ipsec.1 `--customer-gateway-id` cgw-xxxx 
 
 補足：
 
-StaticRoutesOnly　　　　true → BGPを無効　false → BGPを有効
+StaticRoutesOnly　　true → BGPを無効　false → BGPを有効
 
 ※Azure側と設定を合わせる必要有。 
 
@@ -120,7 +120,7 @@ aws ec2 create-route `--route-table-id` rtb-00dae7de4de44cbf4 `--destination-cid
 
 下記コマンドを実行する。
 
-az network local-gateway create `--resource-group` <リソースグループ名> `--name` <ローカルゲートウェイ名> `--gateway-ip-address` <対抗側のVPNデバイスのパブリックIP> `--local-address-prefixes` <オンプレミス側のネットワークプレフィックス>
+az network local-gateway create `--resource-group` リソースグループ名 `--name` ローカルゲートウェイ名 `--gateway-ip-address` 対抗側のVPNデバイスのパブリックIP `--local-address-prefixes` オンプレミス側のネットワークプレフィックス
 
 例：
 az network local-gateway create `--resource-group` test-group `--name` test-lgy `--gateway-ip-address` 13.231.59.159 `--local-address-prefixes` 172.32.0.0/16 `--location` japaneast
@@ -157,7 +157,7 @@ o	ExpressRoute接続: プライベートネットワーク経由での接続を�
 
 下記コマンドを実行する。
 
-az network vpn-connection create `--resource-group` <リソースグループ名> `--name` <接続名> `--vnet-gateway1` <仮想ネットワークゲートウェイ名> `--local-gateway2` <ローカルネットワークゲートウェイ名> `--shared-key` "<事前共有鍵(AWS)>" `--location` japaneast
+az network vpn-connection create `--resource-group` リソースグループ名 `--name` 接続名 `--vnet-gateway1` 仮想ネットワークゲートウェイ名 `--local-gateway2` ローカルネットワークゲートウェイ名 `--shared-key` "事前共有鍵(AWS)" `--location` japaneast
 
 例：
 
@@ -182,7 +182,7 @@ az network vpn-connection create `--resource-group` test-group `--name` test-Con
 
 下記コマンドを実行する。
 
-az network route-table create `--resource-group` <リソースグループ名> `--name` <ルートテーブル名> `--location` japaneast
+az network route-table create `--resource-group` リソースグループ名 `--name` ルートテーブル名 `--location` japaneast
 
  ![AWS to Azure](./AWS to Azure_21.png) 
 
@@ -190,7 +190,7 @@ az network route-table create `--resource-group` <リソースグループ名> `
 
 下記コマンドを実行する。
 
-az network route-table route create `--resource-group` <リソースグループ名> `--route-table-name` <ルートテーブル名> `--name` <関連名> `--address-prefix` <AWS VPC CIDR> `--next-hop-type` VirtualNetworkGateway
+az network route-table route create `--resource-group` リソースグループ名 `--route-table-name` ルートテーブル名 `--name` 関連名 `--address-prefix` AWS VPC CIDR `--next-hop-type` VirtualNetworkGateway
 
 例:
 
