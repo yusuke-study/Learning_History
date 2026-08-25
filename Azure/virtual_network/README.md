@@ -9,7 +9,7 @@ az network vnet create -g <リソースグループ名> -n <Vnet名> --address-p
 
 例：az network vnet create -g testResourceGroup -n test-Vnet --address-prefix 10.0.0.0/16 --subnet-name test-subnet-1 --subnet-prefixes 10.0.0.0/24 --location japaneast
  
- 
+![virtual_network](./virtual_network_01.png) 
 
 3.3.2	ネットワークセキュリティグループ (NSG)　 
 
@@ -19,7 +19,7 @@ az network vnet create -g <リソースグループ名> -n <Vnet名> --address-p
 
 az network nsg create --resource-group <リソースグループ名> --name <NSG名> --location japaneast
  
-
+![virtual_network](./virtual_network_02.png) 
  
 (2)	NSGに条件を追加する。
 
@@ -50,28 +50,32 @@ az network nsg rule create
   --destination-port-ranges <宛先ポート>
 
 例：
+
 az network nsg rule create --resource-group testResourceGroup --nsg-name test-NSG --name RDP --priority 300 --direction Inbound --access Allow --protocol Tcp --source-address-prefixes '*' --source-port-ranges '*' --destination-address-prefixes '*' --destination-port-ranges 3389
  
+![virtual_network](./virtual_network_03.png) 
 
- 
+![virtual_network](./virtual_network_04.png) 
 
 (3)	NSGの内容を出力する。
 
 ・すべてのルールと内容を出力する場合、下記を実行する。
 
 az network nsg show --resource-group <リソースグループ名> --name <NSG名>
- 
+
+![virtual_network](./virtual_network_05.png) 
 
 ・カスタムルールを横並びに出力する場合、下記を実行する。
 
 az network nsg show --resource-group <リソースグループ名> --name <NSG名> --query "securityRules[].{Direction:direction,Priority:priority,Name:name,DestinationPort:destinationPortRange,Protocol:protocol,Source:sourceAddressPrefix,SourcePort:sourcePortRange,Destination:destinationAddressPrefix, Access:access}" --output table  
 
+![virtual_network](./virtual_network_06.png) 
 
 ・デフォルトルールを横並びに出力する場合、下記を実行する。
 
 az network nsg show --resource-group <リソースグループ名> --name <NSG名> --query "defaultSecurityRules[].{Direction:direction,Priority:priority,Name:name,DestinationPort:destinationPortRange,Protocol:protocol, Source:sourceAddressPrefix,SourcePort:sourcePortRange, Destination:destinationAddressPrefix, Access:access}" --output table
 
- 
+![virtual_network](./virtual_network_07.png)  
 
 ・すべてのルールを横並びに出力する場合、下記を実行する。
 $nsg = az network nsg show `
@@ -92,6 +96,6 @@ $allRules | Select-Object `
   @{Name="Destination";Expression={$_.destinationAddressPrefix}},
   @{Name="Access";Expression={$_.access}} | Format-Table -AutoSize
 
-
+![virtual_network](./virtual_network_08.png) 
  
-
+![virtual_network](./virtual_network_09.png) 
