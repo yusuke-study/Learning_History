@@ -39,3 +39,6 @@
     
 - AWS Resource Groups
 - 請求とコスト管理
+
+- AWSとAzure接続検証
+  - [AWSとAzure接続検証](../AWS to Azure)
