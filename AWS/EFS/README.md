@@ -84,40 +84,53 @@ aws efs create-mount-target --file-system-id <ファイルシステムID> --subn
  
 
 (8)	マウントターゲットを確認する。
+
 下記コマンドを実行する。
+
 aws efs describe-mount-targets --file-system-id <ファイルシステムID>
  
 
 (9)	マウントターゲットの主要情報の確認
+
 下記コマンドを実行する。
+
 aws efs describe-mount-targets --file-system-id <ファイルシステムID> --query "MountTargets[*].{ID:MountTargetId,Subnet:SubnetId,AZ:AvailabilityZoneId,IP:IpAddress}" --output table
  
 2.5.2.2	EFSアクセス確認
 
 (1)	セキュリティグループにインバウンドルール(TCP 2049)を追加する。
+
 下記コマンドを実行する。
+
 aws ec2 authorize-security-group-ingress --group-id <セキュリティグループID> --protocol tcp --port 2049 --cidr xxx.xxx.xxx.xxx/xx
  
 
 (2)	セキュリティグループの確認を行う。
+
 ※ポート2049（TCP）**がWindows VMのIPまたはセキュリティグループから許可されていることを確認
+
 下記コマンドを実行する。
+
 aws ec2 describe-security-groups --query "SecurityGroups[*].{ID:GroupId,Name:GroupName,Inbound:IpPermissions[*].{Protocol:IpProtocol,Port:FromPort,CIDR:IpRanges[*].CidrIp}}" --output json
  
 
 (3)	LinuxにNFSクライアントをインストールする。
+
 「sudo yum install -y nfs-utils」を実行する。
  
 
 (4)	マウントポイントを作成する。
+
 「sudo mkdir -p /mnt/efs」を実行する。
  
 
 (5)	EFSをマウントする。
+
 「sudo mount -t nfs4 -o nfsvers=4.1 <ファイルシステムID>.efs.ap-northeast-1.amazonaws.com:/ /mnt/efs」を実行する。
  
 
 (6)	マウント確認を行う。
+
 「df -h /mnt/efs」を実行する。
  
 
@@ -128,7 +141,9 @@ aws ec2 describe-security-groups --query "SecurityGroups[*].{ID:GroupId,Name:Gro
 2.5.2.3	EFS削除
 
 (1)	マウントターゲットの削除
+
 下記コマンドを実行する。
+
 aws efs delete-mount-target --mount-target-id <マウントターゲットID>
  
 
