@@ -119,7 +119,7 @@ aws ec2 create-route `--route-table-id` rtb-00dae7de4de44cbf4 `--destination-cid
 
 下記コマンドを実行する。
 
-az network local-gateway create `--resource-group` <リソースグループ名> --name <ローカルゲートウェイ名> `--gateway-ip-address` <対抗側のVPNデバイスのパブリックIP> `--local-address-prefixes` <オンプレミス側のネットワークプレフィックス>
+az network local-gateway create `--resource-group` <リソースグループ名> `--name` <ローカルゲートウェイ名> `--gateway-ip-address` <対抗側のVPNデバイスのパブリックIP> `--local-address-prefixes` <オンプレミス側のネットワークプレフィックス>
 
 例：
 az network local-gateway create `--resource-group` test-group `--name` test-lgy `--gateway-ip-address` 13.231.59.159 `--local-address-prefixes` 172.32.0.0/16 `--location` japaneast
