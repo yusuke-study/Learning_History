@@ -81,29 +81,34 @@ aws efs describe-file-systems `--query` "FileSystems[*].{ID:FileSystemId,Created
 下記コマンドを実行する。
 
 aws efs create-mount-target `--file-system-id` <ファイルシステムID> `--subnet-id` <サブネットID> `--security-groups` <セキュリティグループ>
- 
+
+![EFS](./EFS_09.png)
 
 (8)	マウントターゲットを確認する。
 
 下記コマンドを実行する。
 
 aws efs describe-mount-targets `--file-system-id` <ファイルシステムID>
- 
+
+![EFS](./EFS_10.png)
 
 (9)	マウントターゲットの主要情報の確認
 
 下記コマンドを実行する。
 
 aws efs describe-mount-targets `--file-system-id` <ファイルシステムID> --query "MountTargets[*].{ID:MountTargetId,Subnet:SubnetId,AZ:AvailabilityZoneId,IP:IpAddress}" `--output` table
- 
-2.5.2.2	EFSアクセス確認
+
+![EFS](./EFS_11.png)
+
+##	EFSアクセス確認
 
 (1)	セキュリティグループにインバウンドルール(TCP 2049)を追加する。
 
 下記コマンドを実行する。
 
 aws ec2 authorize-security-group-ingress `--group-id` <セキュリティグループID> `--protocol` tcp `--port` 2049 `--cidr` xxx.xxx.xxx.xxx/xx
- 
+
+![EFS](./EFS_12.png)
 
 (2)	セキュリティグループの確認を行う。
 
@@ -112,43 +117,53 @@ aws ec2 authorize-security-group-ingress `--group-id` <セキュリティグル�
 下記コマンドを実行する。
 
 aws ec2 describe-security-groups `--query` "SecurityGroups[*].{ID:GroupId,Name:GroupName,Inbound:IpPermissions[*].{Protocol:IpProtocol,Port:FromPort,CIDR:IpRanges[*].CidrIp}}" `--output` json
- 
+
+![EFS](./EFS_13.png)
 
 (3)	LinuxにNFSクライアントをインストールする。
 
 「sudo yum install -y nfs-utils」を実行する。
- 
+
+![EFS](./EFS_14.png)
 
 (4)	マウントポイントを作成する。
 
 「sudo mkdir -p /mnt/efs」を実行する。
- 
+
+ ![EFS](./EFS_15.png)
 
 (5)	EFSをマウントする。
 
 「sudo mount -t nfs4 -o nfsvers=4.1 <ファイルシステムID>.efs.ap-northeast-1.amazonaws.com:/ /mnt/efs」を実行する。
- 
+
+![EFS](./EFS_16.png)
 
 (6)	マウント確認を行う。
 
 「df -h /mnt/efs」を実行する。
- 
+
+ ![EFS](./EFS_17.png)
 
 (7)	ファイルとフォルダーのアップロード確認を行う。
  
-
+ ![EFS](./EFS_18.png)
  
-2.5.2.3	EFS削除
+##	EFS削除
 
 (1)	マウントターゲットの削除
 
 下記コマンドを実行する。
 
 aws efs delete-mount-target `--mount-target-id` <マウントターゲットID>
- 
+
+![EFS](./EFS_19.png)
 
 (2)	EFSの削除
+
 下記コマンドを実行する。
+
 aws efs delete-file-system --file-system-id <ファイルシステムID>
+
+![EFS](./EFS_20.png)
  
 
