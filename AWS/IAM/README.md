@@ -94,6 +94,7 @@ IAMポリシーに関連するコマンドを記載する。
  ![IAM](./IAM_13.png) 
 
 (2)	ユーザーにポリシーを付与する
+
 「aws iam attach-user-policy --user-name <ユーザー名>  --policy-arn arn:aws:iam::aws:policy/<ポリシー名>」を実行する。
  
  ![IAM](./IAM_14.png) 
@@ -101,11 +102,13 @@ IAMポリシーに関連するコマンドを記載する。
  ![IAM](./IAM_15.png) 
 
 (3)	ユーザーにアタッチされているポリシーを表示する。
+
 「aws iam list-attached-user-policies --user-name <ユーザー名>」を実行する。
 
 ![IAM](./IAM_16.png) 
 
 (4)	グループにアタッチされているポリシーを表示する。
+
 「aws iam list-attached-group-policies --group-name <グループ名> 」を実行する。
  
 ![IAM](./IAM_17.png) 
@@ -119,6 +122,7 @@ EC2のフルアクセス権限
 [`EC2-full-access-policy.json ダウンロード`](./EC2-full-access-policy.json)
 
 (6)	ポリシーを作成する。
+
 「aws iam create-policy --policy-name <ポリシー名> --policy-document file://<ファイルパス>」を実行する。
  
 ![IAM](./IAM_18.png) 
@@ -127,6 +131,7 @@ EC2のフルアクセス権限
 
 
 (7)	ポリシーの内容を表示する。
+
 「aws iam get-policy-version --policy-arn <arn> --version-id v1」を実行する。
 
 ![IAM](./IAM_20.png) 
@@ -147,11 +152,13 @@ IAMポリシーの基本構造（JSON）　一例  ※細かく設定する場�
 IAMロールに関連するコマンドを記載する。
 
 (1)	IAMロールの一覧表示をする。
+
 「aws iam list-roles」を実行する。
 
 ![IAM](./IAM_22.png)  
 
 (2)	IAMロール名だけ出力する。
+
 「aws iam list-roles  --query 'Roles[*].RoleName'」を実行する。
 
 ![IAM](./IAM_23.png)  
