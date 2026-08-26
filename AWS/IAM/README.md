@@ -22,7 +22,7 @@ IAMユーザーに関連するコマンドを記載する。
 
 
 (3)	ユーザーを作成する。
-「aws iam create-user --user-name <ユーザー名>」を実行する。
+「aws iam create-user `--user-name` ユーザー名」を実行する。
  
 ![IAM](./IAM_03.png)
 
@@ -30,19 +30,19 @@ IAMユーザーに関連するコマンドを記載する。
 
 (4)	アクセスキーを作成する。
 
-「aws iam create-access-key --user-name <ユーザー名>」を実行する。
+「aws iam create-access-key `--user-name` ユーザー名」を実行する。
 
 ![IAM](./IAM_05.png)
 
 (5)	パスワードを設定する。
 
-「aws iam create-login-profile --user-name <ユーザー名> --password '<パスワード>' --password-reset-required」を実行する。
+「aws iam create-login-profile `--user-name` ユーザー名 `--password` パスワード `--password-reset-required`」を実行する。
 
 ![IAM](./IAM_06.png)
 
 (6)	「パスワードのリセットが必要」設定の反映をする。
 
-「aws iam attach-user-policy --user-name <ユーザー名> --policy-arn arn:aws:iam::aws:policy/IAMUserChangePassword」を実行する。
+「aws iam attach-user-policy `--user-name` ユーザー名 `--policy-arn` arn:aws:iam::aws:policy/IAMUserChangePassword」を実行する。
 
 ![IAM](./IAM_07.png)
 
@@ -58,25 +58,25 @@ IAMグループに関連するコマンドを記載する。
 
 (2)	グループ名だけ出力する。
 
-「aws iam list-groups --query 'Groups[].GroupName'」を実行する。
+「aws iam list-groups `--query` 'Groups[].GroupName'」を実行する。
 
 ![IAM](./IAM_09.png)
 
 (3)	グループを作成する。
 
-「aws iam create-group --group-name <グループ名>」を実行する。
+「aws iam create-group `--group-name` グループ名」を実行する。
 
  ![IAM](./IAM_10.png)
 
 (4)	ユーザーをグループに追加する。
 
-「aws iam add-user-to-group --user-name <ユーザー名> --group-name <グループ名>」を実行する。
+「aws iam add-user-to-group `--user-name` ユーザー名 `--group-name` グループ名」を実行する。
 
  ![IAM](./IAM_11.png) 
 
 (5)	ユーザーが所属しているグループを表示する。
 
-「aws iam list-groups-for-user --user-name<ユーザー名>」を実行する。
+「aws iam list-groups-for-user `--user-name`　ユーザー名」を実行する。
 
  ![IAM](./IAM_12.png) 
 
@@ -89,13 +89,13 @@ IAMポリシーに関連するコマンドを記載する。
 
 (1)	カスタムポリシーのみを一覧表示する。
 
-「aws iam list-policies --scope Local」を実行する。
+「aws iam list-policies `--scope` Local」を実行する。
 
  ![IAM](./IAM_13.png) 
 
 (2)	ユーザーにポリシーを付与する
 
-「aws iam attach-user-policy --user-name <ユーザー名>  --policy-arn arn:aws:iam::aws:policy/<ポリシー名>」を実行する。
+「aws iam attach-user-policy `--user-name` ユーザー名  `--policy-arn` arn:aws:iam::aws:policy/<ポリシー名>」を実行する。
  
  ![IAM](./IAM_14.png) 
  
@@ -103,13 +103,13 @@ IAMポリシーに関連するコマンドを記載する。
 
 (3)	ユーザーにアタッチされているポリシーを表示する。
 
-「aws iam list-attached-user-policies --user-name <ユーザー名>」を実行する。
+「aws iam list-attached-user-policies `--user-name` ユーザー名」を実行する。
 
 ![IAM](./IAM_16.png) 
 
 (4)	グループにアタッチされているポリシーを表示する。
 
-「aws iam list-attached-group-policies --group-name <グループ名> 」を実行する。
+「aws iam list-attached-group-policies `--group-name` グループ名 」を実行する。
  
 ![IAM](./IAM_17.png) 
 
@@ -123,7 +123,7 @@ EC2のフルアクセス権限
 
 (6)	ポリシーを作成する。
 
-「aws iam create-policy --policy-name <ポリシー名> --policy-document file://<ファイルパス>」を実行する。
+「aws iam create-policy `--policy-name` ポリシー名 `--policy-document` file://<ファイルパス>」を実行する。
  
 ![IAM](./IAM_18.png) 
 
@@ -132,7 +132,7 @@ EC2のフルアクセス権限
 
 (7)	ポリシーの内容を表示する。
 
-「aws iam get-policy-version --policy-arn <arn> --version-id v1」を実行する。
+「aws iam get-policy-version `--policy-arn` <arn> `--version-id` v1」を実行する。
 
 ![IAM](./IAM_20.png) 
 
@@ -159,7 +159,7 @@ IAMロールに関連するコマンドを記載する。
 
 (2)	IAMロール名だけ出力する。
 
-「aws iam list-roles  --query 'Roles[*].RoleName'」を実行する。
+「aws iam list-roles  `--query` 'Roles[*].RoleName'」を実行する。
 
 ![IAM](./IAM_23.png)  
 
@@ -169,7 +169,7 @@ IAMロールに関連するコマンドを記載する。
 
 (4)	IAM ロールの作成を行う。
 
-「aws iam create-role --role-name ロール名 --assume-role-policy-document file:// <ファイルパス>」を実行する。
+「aws iam create-role `--role-name` ロール名 `--assume-role-policy-document` file:// <ファイルパス>」を実行する。
  
 ![IAM](./IAM_24.png)  
 
@@ -177,11 +177,11 @@ IAMロールに関連するコマンドを記載する。
  
 (5)	ポリシーのアタッチを行う。
 
-「aws iam attach-role-policy --policy-arn arn:aws:iam::aws:policy/<ポリシー名>　--role-name <ロール名>」を実行する。
+「aws iam attach-role-policy `--policy-arn` arn:aws:iam::aws:policy/<ポリシー名>　`--role-name` ロール名」を実行する。
 
 ※カスタムポリシーの場合は
 
-「aws iam attach-role-policy --policy-arn arn:<テナントID>:iam::aws:policy/<ポリシー名>　--role-name <ロール名>」を実行する。
+「aws iam attach-role-policy `--policy-arn` arn:<テナントID>:iam::aws:policy/<ポリシー名>　`--role-name` ロール名」を実行する。
  
 ![IAM](./IAM_26.png)  
 
@@ -189,6 +189,6 @@ IAMロールに関連するコマンドを記載する。
  
 (6)	アタッチされているマネージドポリシーの一覧を表示する。
 
-「aws iam list-attached-role-policies --role-name <ロール名>」を実行する。
+「aws iam list-attached-role-policies `--role-name` ロール名」を実行する。
 
 ![IAM](./IAM_28.png)  
