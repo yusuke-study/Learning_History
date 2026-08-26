@@ -13,12 +13,12 @@ AWSを操作するための、AWS CLIのコマンドラインについて記載�
 「C:\Users\ USERNAME \.aws\」に格納される。
 
 (2)	新しいユーザーを設定する場合
-「aws configure --profile other-account」を実行する。
+「aws configure `--profile` other-account」を実行する。
 
 ![CLI](./CLI_02.png) 
 
 (3)	AWS CLIのバージョンを表示する
-「aws --version」を実行する。
+「aws `--version`」を実行する。
  
 ![CLI](./CLI_03.png)
 
