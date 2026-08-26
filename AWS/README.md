@@ -37,9 +37,12 @@
   - [AWS CDK実行準備](./CDK/)
   - [AWS CDK動作検証](./CDK02/)
 
-    
 - AWS Resource Groups
 - 請求とコスト管理
 
 - AWSとAzure接続検証
   - [AWSとAzure接続検証](../AWS to Azure)
+
+
+注： 実行コマンドについて、GitHubの使用上、記号等が省略され、記載した内容が上手く反映されていない可能性があります。
+実際の実行コマンドはキャプチャになります。
