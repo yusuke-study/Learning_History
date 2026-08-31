@@ -17,7 +17,7 @@ Blue XP自体は無償で利用することができ、Blue XP Connectorとい�
 
 ![CVO](./CVO_01.png)
  
-5.1.1.1	Connector作成 
+##	Connector作成 
 
 Blue XP Connector(仮想マシン)の作成手順は以下の通りである。
 
