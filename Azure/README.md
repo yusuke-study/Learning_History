@@ -15,5 +15,9 @@
   - [Azure Files(ストレージ アカウント)](./AzureFile/)
   - [Azure File Sync (ストレージ同期サービス)](./AzureFileSync/)
 
+- テンプレート
+  - [ARMテンプレート](./ARM/)
+  - [Bicepテンプレート](./Bicep/)
+
 - AWSとAzure接続検証
   - [AWSとAzure接続検証](../AWS to Azure)
