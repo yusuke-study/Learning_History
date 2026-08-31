@@ -139,11 +139,11 @@ SecurityEnabled　セキュリティが有効なグループを作成するか�
 
 AzureADPreview モジュールへの入れ替えが必要
 
-# 既存の AzureAD モジュールをアンインストール（必要に応じて）
+### 既存の AzureAD モジュールをアンインストール（必要に応じて）
 
 Uninstall-Module AzureAD
 
-# AzureADPreview モジュールをインストール
+### AzureADPreview モジュールをインストール
 
 Install-Module AzureADPreview
 
