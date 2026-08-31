@@ -24,7 +24,8 @@ Select-Object Name,DistinguishedName
 下記コマンドを実行する。
 
 CSV出力例：Get-ADReplicationSite -Filter * |
-Select-Object Name,DistinguishedName |export-csv -Encoding default C:\Setup\01_site_list.csv
+Select-Object Name,DistinguishedName |
+export-csv -Encoding default C:\Setup\01_site_list.csv
 
 ![AD](./AD02_04.png) 
  
