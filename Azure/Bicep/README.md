@@ -46,5 +46,4 @@ C:\templates\main.bicep
 az deployment group create --name test-storagebicep --resource-group test-bicep --template-file "C:\templates\main.bicep" --parameters storageAccountName=storagebisep20251119
 
 ![Bicep](./Bicep_09.png) 
-下記コマンドを実行する。
-az deployment group create --name test-storagebicep --resource-group test-bicep --template-file "C:\templates\main.bicep" --parameters storageAccountName=storagebisep20251119
+
