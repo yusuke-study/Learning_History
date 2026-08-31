@@ -71,6 +71,7 @@ AWSで作成する.ifファイルは「main.tf」「test_teraform_EC2.tf」「te
 ※今回は実施しない。
 
 main.tf
+
 ![TerraForm](./TerraForm_07.png)
 
 test_teraform_EC2.tf
