@@ -28,7 +28,8 @@ Microsoft Graphを使用したコマンド操作について記載する。
 
 (5)	グループ一覧を取得する。
 
-「Get-MgGroup -Filter "groupTypes/any(c:c eq 'Unified')" | Format-Table DisplayName, Id」を実行する。
+「Get-MgGroup -Filter "groupTypes/any(c:c eq 'Unified')" |
+Format-Table DisplayName, Id」を実行する。
 
   ![MSGraph](./MSGraph_04.png)
 
@@ -36,7 +37,8 @@ Microsoft Graphを使用したコマンド操作について記載する。
 
 「Get-MgUser -Select "DisplayName,UserPrincipalName,UserType,OnPremisesSyncEnabled" -All |
 Select-Object DisplayName, UserPrincipalName, UserType, OnPremisesSyncEnabled |
-ConvertTo-Csv -NoTypeInformation | Out-File -FilePath "EntraID_Users.csv" -Encoding utf8」を実行する。
+ConvertTo-Csv -NoTypeInformation |
+Out-File -FilePath "EntraID_Users.csv" -Encoding utf8」を実行する。
 
 ※補足
 
