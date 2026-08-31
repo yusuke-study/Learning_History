@@ -14,7 +14,7 @@ EFSは主にLinux環境向けに設計されており、NFS（Network File Syste
 
 下記コマンドを実行する。
 
-aws efs create-file-system `--creation-token` <トークン名> `--performance-mode` generalPurpose `--throughput-mode` bursting --encrypted `--tags Key=Name,Value=<EFS名>` `--region ap-northeast-1`
+aws efs create-file-system `--creation-token` トークン名 `--performance-mode` generalPurpose `--throughput-mode` bursting --encrypted `--tags` Key=Name,Value=EFS名 `--region ap-northeast-1`
 
 備考
 
