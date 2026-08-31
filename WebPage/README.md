@@ -1,4 +1,4 @@
-- Webページ作成<br>
+- 言語学習＆Webページ作成学習を行った際のWebページが下記になります。<br>
 
 　<a href="https://yusuke-study.github.io/Report-submission01/" target="_blank">キャンバスページ</a><br>
  
