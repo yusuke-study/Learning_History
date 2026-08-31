@@ -97,7 +97,7 @@ aws ec2 describe-vpn-connections `--vpn-connection-id` vpn-xxxx
 
 下記コマンドを実行する。
 
-aws ec2 create-route `--route-table-id` rtb-xxxxxxxx `--destination-cidr-block` <Azure VNet CIDR> `--gateway-id` vgw-xxxxxxxx
+aws ec2 create-route `--route-table-id` rtb-xxxxxxxx `--destination-cidr-block` Azure VNet CIDR `--gateway-id` vgw-xxxxxxxx
 
 例：
 
