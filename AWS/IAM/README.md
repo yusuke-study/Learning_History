@@ -132,7 +132,7 @@ EC2のフルアクセス権限
 
 (7)	ポリシーの内容を表示する。
 
-「aws iam get-policy-version `--policy-arn` <arn> `--version-id` v1」を実行する。
+「aws iam get-policy-version `--policy-arn` arn `--version-id` v1」を実行する。
 
 ![IAM](./IAM_20.png) 
 
@@ -177,11 +177,11 @@ IAMロールに関連するコマンドを記載する。
  
 (5)	ポリシーのアタッチを行う。
 
-「aws iam attach-role-policy `--policy-arn` arn:aws:iam::aws:policy/<ポリシー名>　`--role-name` ロール名」を実行する。
+「aws iam attach-role-policy `--policy-arn` arn:aws:iam::aws:policy/ポリシー名　`--role-name` ロール名」を実行する。
 
 ※カスタムポリシーの場合は
 
-「aws iam attach-role-policy `--policy-arn` arn:<テナントID>:iam::aws:policy/<ポリシー名>　`--role-name` ロール名」を実行する。
+「aws iam attach-role-policy `--policy-arn` arn:<テナントID>:iam::aws:policy/ポリシー名　`--role-name` ロール名」を実行する。
  
 ![IAM](./IAM_26.png)  
 
