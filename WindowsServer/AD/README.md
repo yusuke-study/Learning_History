@@ -70,7 +70,9 @@ Export-csv -NoTypeInformation -Encoding UTF8 ADObject.csv
 
 (9)	連絡先の一覧を取得する。※主に必要な情報のみ取得する。
 
-Get-ADObject -filter {objectClass -eq "contact"} -Properties * | Select-Object SamAccountName,CN,Name,UserPrincipalName,DisplayName,Description,DistinguishedName,ObjectCategory,ObjectClass,ObjectGUID,SID,Deleted,Created,Modified,Enabled | Export-csv -NoTypeInformation -Encoding UTF8 contact.csv
+Get-ADObject -filter {objectClass -eq "contact"} -Properties * |
+Select-Object SamAccountName,CN,Name,UserPrincipalName,DisplayName,Description,DistinguishedName,ObjectCategory,ObjectClass,ObjectGUID,SID,Deleted,Created,Modified,Enabled |
+Export-csv -NoTypeInformation -Encoding UTF8 contact.csv
  
 ※画像なし
 
