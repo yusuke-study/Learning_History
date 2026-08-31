@@ -26,7 +26,9 @@ netdom query fsmo
 
 (4)	OUの一覧を取得する。※主に必要な情報のみ取得する。
 
-Get-ADOrganizationalUnit -Filter * -Properties CanonicalName | Select-Object -Property CanonicalName | Export-csv -NoTypeInformation -Encoding UTF8 ADOrganizationalUnit.csv
+Get-ADOrganizationalUnit -Filter * -Properties CanonicalName |
+Select-Object -Property CanonicalName |
+Export-csv -NoTypeInformation -Encoding UTF8 ADOrganizationalUnit.csv
  
 ![AD](./AD_04.png) 
 
@@ -34,25 +36,35 @@ Get-ADOrganizationalUnit -Filter * -Properties CanonicalName | Select-Object -Pr
 
 (5)	ユーザーアカウントの一覧を取得する。※主に必要な情報のみ取得する。
 
-Get-ADUser -Filter * -Properties * | Select-Object SamAccountName,CN,Name,UserPrincipalName,DisplayName,GivenName,sn,Surname,Emailaddress,@{ E={$_.proxyAddresses}},mail,mailNickname,@{ E={$_.DepartmentMail}},Description,DistinguishedName,CanonicalName,@{ E={$_.MemberOf}},Company,Department,Division,EmployeeID,EmployeeNumber,Manager,Title,Country,PostalCode,City,StreetAddress,State,Office,OfficePhone,HomePhone,MobilePhone,FAX,HomePage,Organization,OtherName,Initials,ObjectCategory,ObjectClass,ObjectGUID,SID,ScriptPath,ProfilePath,SmartcardLogonRequired,CannotChangePassword,PasswordExpired,PasswordNeverExpires,PasswordLastSet,DoesNotRequirePreAuth,HomeDirectory,Deleted,LastLogonDate,Created,Modified,Enabled,LockedOut,extensionAttribute1,extensionAttribute2,extensionAttribute3,extensionAttribute4,extensionAttribute5,extensionAttribute6,extensionAttribute7,extensionAttribute8,extensionAttribute9,extensionAttribute10,extensionAttribute11,extensionAttribute12,extensionAttribute13,extensionAttribute14,extensionAttribute15 | Export-csv -NoTypeInformation -Encoding UTF8 ADUser.csv
+Get-ADUser -Filter * -Properties * |
+Select-Object SamAccountName,CN,Name,UserPrincipalName,DisplayName,GivenName,sn,Surname,Emailaddress,@{ E={$_.proxyAddresses}},mail,mailNickname,@{ E={$_.DepartmentMail}},Description,DistinguishedName,CanonicalName,@{ E={$_.MemberOf}},Company,Department,Division,EmployeeID,EmployeeNumber,Manager,Title,Country,PostalCode,City,StreetAddress,State,Office,OfficePhone,HomePhone,MobilePhone,FAX,HomePage,Organization,OtherName,Initials,ObjectCategory,ObjectClass,ObjectGUID,SID,ScriptPath,ProfilePath,SmartcardLogonRequired,CannotChangePassword,PasswordExpired,PasswordNeverExpires,PasswordLastSet,DoesNotRequirePreAuth,HomeDirectory,Deleted,LastLogonDate,Created,Modified,Enabled,LockedOut,extensionAttribute1,extensionAttribute2,extensionAttribute3,extensionAttribute4,extensionAttribute5,extensionAttribute6,extensionAttribute7,extensionAttribute8,extensionAttribute9,extensionAttribute10,extensionAttribute11,extensionAttribute12,extensionAttribute13,extensionAttribute14,extensionAttribute15 |
+Export-csv -NoTypeInformation -Encoding UTF8 ADUser.csv
 
 ![AD](./AD_06.png)  
 
 (6)	グループの一覧を取得する。※主に必要な情報のみ取得する。
 
-Get-ADGroup -Filter * -Properties * | Select-Object SamAccountName,CN,Name,DisplayName,Description,GroupCategory,GroupScope,ManagedBy,@{ E={$_.MemberOf}},@{ E={$_.Members}},mail,DistinguishedName,CanonicalName,ObjectGUID,SID,Created,Modified | Export-csv -NoTypeInformation -Encoding UTF8 ADGroup.csv
+Get-ADGroup -Filter * -Properties * |
+Select-Object SamAccountName,CN,Name,DisplayName,Description,GroupCategory,GroupScope,ManagedBy,@{ E={$_.MemberOf}},@{ E={$_.Members}},mail,DistinguishedName,CanonicalName,ObjectGUID,SID,Created,Modified |
+Export-csv -NoTypeInformation -Encoding UTF8 ADGroup.csv
 
 ![AD](./AD_07.png)  
 
 (7)	グループのメンバーを取得する。※主に必要な情報のみ取得する。
 
-Get-ADGroup -Filter *| select Name, @{Label = "MemberNames"; Expression = {($_| Get-ADGroupMember| select -ExpandProperty Name) -join ","}}| Export-csv -NoTypeInformation -Encoding UTF8 ADGroupMember.csv
+Get-ADGroup -Filter *|
+select Name, @{Label = "MemberNames"; Expression = {($_|
+Get-ADGroupMember|
+select -ExpandProperty Name) -join ","}}|
+Export-csv -NoTypeInformation -Encoding UTF8 ADGroupMember.csv
 
 ![AD](./AD_08.png)  
 
 (8)	コンピューターオブジェクトの一覧を取得する。※主に必要な情報のみ取得する。
 
-Get-ADComputer -Filter * -Properties * | Select-Object SamAccountName,CN,Name,UserPrincipalName,DisplayName,Description,DistinguishedName,IPv4Address,OperatingSystem,OperatingSystemVersion,ObjectCategory,ObjectClass,ObjectGUID,SID,objectSid,Deleted,LastLogonDate,Created,Modified,Enabled,LockedOut | Export-csv -NoTypeInformation -Encoding UTF8 ADObject.csv
+Get-ADComputer -Filter * -Properties * |
+Select-Object SamAccountName,CN,Name,UserPrincipalName,DisplayName,Description,DistinguishedName,IPv4Address,OperatingSystem,OperatingSystemVersion,ObjectCategory,ObjectClass,ObjectGUID,SID,objectSid,Deleted,LastLogonDate,Created,Modified,Enabled,LockedOut |
+Export-csv -NoTypeInformation -Encoding UTF8 ADObject.csv
 
 ![AD](./AD_09.png)  
 
