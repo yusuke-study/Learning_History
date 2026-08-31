@@ -8,3 +8,6 @@
 
 - SharePoint
   - [SharePointのコマンド操作等](./SharePoint/)
+
+- Microsoft Graph
+  - [Microsoft Graphのコマンド操作等](./MSGraph/)
