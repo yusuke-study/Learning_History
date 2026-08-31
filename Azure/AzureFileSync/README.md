@@ -195,7 +195,7 @@ URL: https://www.microsoft.com/en-us/download/details.aspx?id=57159
  
 
  
-3.4.2.3	帯域制限
+##	帯域制限
 
 Azure File Sync帯域制限について下記に記載する。
 
@@ -227,7 +227,7 @@ Get-StorageSyncNetworkLimit | ForEach-Object { Remove-StorageSyncNetworkLimit -I
 
 クラウドを使った階層化とは、名前空間 (ファイルとフォルダーの階層、およびファイルのプロパティ) とファイルコンテンツを分離することである。
 
- 
+![AzureFileSync](./AzureFileSync_27.png)  
 
 
 
@@ -244,11 +244,9 @@ Get-StorageSyncNetworkLimit | ForEach-Object { Remove-StorageSyncNetworkLimit -I
 
 x 日間アクセスされていない (読み書きされていない) クール ファイルがクラウドに階層化される。
 
- 
+![AzureFileSync](./AzureFileSync_28.png)   
 
-
- 
-
+![AzureFileSync](./AzureFileSync_29.png)   
 
 階層化されたファイル
 
@@ -256,13 +254,13 @@ x 日間アクセスされていない (読み書きされていない) クー�
 
 ファイルが階層化されると、Azure File Sync ファイル システム フィルター (StorageSync.sys) によって、ローカルでファイルが再解析ポイントと呼ばれるポインターと置き換えられる。
 
- 
+![AzureFileSync](./AzureFileSync_30.png)    
 
 ローカルにキャッシュされたファイル
 
 オンプレミスのファイル サーバーに格納されているファイルの場合、ファイル全体 (ファイル属性とファイル コンテンツ) はローカルに保存されるため、ディスク上のサイズはファイルの論理サイズとほぼ同じになる。
 
- 
+![AzureFileSync](./AzureFileSync_31.png)     
 
 
 Azure Files と Azure File Sync に Azure プライベート エンドポイントを実装することにより、パブリック エンドポイント アクセスは無効になり、Azure 仮想ネットワークからの Azure Files と Azure File Sync へのアクセスが制限される。
