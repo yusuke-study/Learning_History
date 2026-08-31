@@ -76,19 +76,22 @@ Get-ADObject -filter {objectClass -eq "contact"} -Properties * | Select-Object S
 
 (10) OUがどの階層にあるか表示する。
 
-「Get-ADObject -LDAPFilter "(objectClass=organizationalUnit)" -Properties * | Select-Object Name,CanonicalName」を実行する。
+「Get-ADObject -LDAPFilter "(objectClass=organizationalUnit)" -Properties * |
+Select-Object Name,CanonicalName」を実行する。
 
 ![AD](./AD_10.png)  
 
 (11) OU(組織単位)に依存しているグループポリシー名を全て取得する。
 
-「Get-GPInheritance -Target "OU=ConnectOUUser,DC=anzendaiichi,DC=onmicrosoft,DC=com" | Select-Object Name,GpoLinks」を実行する。
+「Get-GPInheritance -Target "OU=ConnectOUUser,DC=anzendaiichi,DC=onmicrosoft,DC=com" |
+Select-Object Name,GpoLinks」を実行する。
 
 ※画像なし
 
 (12) ドメイン内の全GPOのレポートを取得する。
 
-「(Get-GPO -All).DisplayName | ForEach-Object {Get-GPOReport -Name $_ -ReportType Html -Path C:\GPOReport\$_.html}」を実行する。
+「(Get-GPO -All).DisplayName |
+ForEach-Object {Get-GPOReport -Name $_ -ReportType Html -Path C:\GPOReport\$_.html}」を実行する。
 
 ![AD](./AD_11.png)   
 
