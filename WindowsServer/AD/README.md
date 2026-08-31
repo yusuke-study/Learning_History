@@ -24,7 +24,13 @@ netdom query fsmo
 
 ![AD](./AD_03.png) 
 
-(4)	OUの一覧を取得する。※主に必要な情報のみ取得する。
+(4)	FSMOを別サーバー(Active Directory)に移行する
+
+「Move-ADDirectoryServerOperationMasterRole -Identity "<AD移行先ホスト名>" -OperationMasterRole 0,1,2,3,4」コマンドを実行する。 
+
+![AD](./AD_14.png)   
+
+(5)	OUの一覧を取得する。※主に必要な情報のみ取得する。
 
 Get-ADOrganizationalUnit -Filter * -Properties CanonicalName |
 Select-Object -Property CanonicalName |
@@ -34,7 +40,7 @@ Export-csv -NoTypeInformation -Encoding UTF8 ADOrganizationalUnit.csv
 
 ![AD](./AD_05.png) 
 
-(5)	ユーザーアカウントの一覧を取得する。※主に必要な情報のみ取得する。
+(6)	ユーザーアカウントの一覧を取得する。※主に必要な情報のみ取得する。
 
 Get-ADUser -Filter * -Properties * |
 Select-Object SamAccountName,CN,Name,UserPrincipalName,DisplayName,GivenName,sn,Surname,Emailaddress,@{ E={$_.proxyAddresses}},mail,mailNickname,@{ E={$_.DepartmentMail}},Description,DistinguishedName,CanonicalName,@{ E={$_.MemberOf}},Company,Department,Division,EmployeeID,EmployeeNumber,Manager,Title,Country,PostalCode,City,StreetAddress,State,Office,OfficePhone,HomePhone,MobilePhone,FAX,HomePage,Organization,OtherName,Initials,ObjectCategory,ObjectClass,ObjectGUID,SID,ScriptPath,ProfilePath,SmartcardLogonRequired,CannotChangePassword,PasswordExpired,PasswordNeverExpires,PasswordLastSet,DoesNotRequirePreAuth,HomeDirectory,Deleted,LastLogonDate,Created,Modified,Enabled,LockedOut,extensionAttribute1,extensionAttribute2,extensionAttribute3,extensionAttribute4,extensionAttribute5,extensionAttribute6,extensionAttribute7,extensionAttribute8,extensionAttribute9,extensionAttribute10,extensionAttribute11,extensionAttribute12,extensionAttribute13,extensionAttribute14,extensionAttribute15 |
@@ -42,7 +48,7 @@ Export-csv -NoTypeInformation -Encoding UTF8 ADUser.csv
 
 ![AD](./AD_06.png)  
 
-(6)	グループの一覧を取得する。※主に必要な情報のみ取得する。
+(7)	グループの一覧を取得する。※主に必要な情報のみ取得する。
 
 Get-ADGroup -Filter * -Properties * |
 Select-Object SamAccountName,CN,Name,DisplayName,Description,GroupCategory,GroupScope,ManagedBy,@{ E={$_.MemberOf}},@{ E={$_.Members}},mail,DistinguishedName,CanonicalName,ObjectGUID,SID,Created,Modified |
@@ -50,7 +56,7 @@ Export-csv -NoTypeInformation -Encoding UTF8 ADGroup.csv
 
 ![AD](./AD_07.png)  
 
-(7)	グループのメンバーを取得する。※主に必要な情報のみ取得する。
+(8)	グループのメンバーを取得する。※主に必要な情報のみ取得する。
 
 Get-ADGroup -Filter *|
 select Name, @{Label = "MemberNames"; Expression = {($_|
@@ -60,7 +66,7 @@ Export-csv -NoTypeInformation -Encoding UTF8 ADGroupMember.csv
 
 ![AD](./AD_08.png)  
 
-(8)	コンピューターオブジェクトの一覧を取得する。※主に必要な情報のみ取得する。
+(9)	コンピューターオブジェクトの一覧を取得する。※主に必要な情報のみ取得する。
 
 Get-ADComputer -Filter * -Properties * |
 Select-Object SamAccountName,CN,Name,UserPrincipalName,DisplayName,Description,DistinguishedName,IPv4Address,OperatingSystem,OperatingSystemVersion,ObjectCategory,ObjectClass,ObjectGUID,SID,objectSid,Deleted,LastLogonDate,Created,Modified,Enabled,LockedOut |
@@ -68,7 +74,7 @@ Export-csv -NoTypeInformation -Encoding UTF8 ADObject.csv
 
 ![AD](./AD_09.png)  
 
-(9)	連絡先の一覧を取得する。※主に必要な情報のみ取得する。
+(10)	連絡先の一覧を取得する。※主に必要な情報のみ取得する。
 
 Get-ADObject -filter {objectClass -eq "contact"} -Properties * |
 Select-Object SamAccountName,CN,Name,UserPrincipalName,DisplayName,Description,DistinguishedName,ObjectCategory,ObjectClass,ObjectGUID,SID,Deleted,Created,Modified,Enabled |
@@ -76,21 +82,21 @@ Export-csv -NoTypeInformation -Encoding UTF8 contact.csv
  
 ※画像なし
 
-(10) OUがどの階層にあるか表示する。
+(11) OUがどの階層にあるか表示する。
 
 「Get-ADObject -LDAPFilter "(objectClass=organizationalUnit)" -Properties * |
 Select-Object Name,CanonicalName」を実行する。
 
 ![AD](./AD_10.png)  
 
-(11) OU(組織単位)に依存しているグループポリシー名を全て取得する。
+(12) OU(組織単位)に依存しているグループポリシー名を全て取得する。
 
 「Get-GPInheritance -Target "OU=ConnectOUUser,DC=anzendaiichi,DC=onmicrosoft,DC=com" |
 Select-Object Name,GpoLinks」を実行する。
 
 ※画像なし
 
-(12) ドメイン内の全GPOのレポートを取得する。
+(13) ドメイン内の全GPOのレポートを取得する。
 
 「(Get-GPO -All).DisplayName |
 ForEach-Object {Get-GPOReport -Name $_ -ReportType Html -Path C:\GPOReport\$_.html}」を実行する。
@@ -98,7 +104,7 @@ ForEach-Object {Get-GPOReport -Name $_ -ReportType Html -Path C:\GPOReport\$_.ht
 ![AD](./AD_11.png)   
 
 
-(13) テストファイルを作成する。
+(14) テストファイルを作成する。
 
 ・テストファイル1MBを作成する場合、下記コマンドを実行する
 
@@ -108,7 +114,7 @@ fsutil file createnew "テストファイル1MB" 1048576
 
  
 
-(14) コマンド履歴をテキストに記録する。
+(15) コマンド履歴をテキストに記録する。
 
 下記コマンドを実行する。
 
