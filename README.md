@@ -16,7 +16,7 @@ Windows Server、Linux、AWS、Azure、Microsoft 365、などの構築・運用�
  
 - [Azure](./Azure/)
 
-- AWS Azure　共通検証
+- AWS Azure 共通検証
   - [Terraform検証](./Terraform/)
   - [AWS to Azure検証](./AWS to Azure/)
   - [Cloud Volumes ONTAP検証](./CVO/)
