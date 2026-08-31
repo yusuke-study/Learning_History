@@ -60,7 +60,7 @@ foreach ($group in $groups) {
     }
 }
 
-# CSVに出力
+### CSVに出力
 $results | Export-Csv -Path "MailEnabledSecurityGroups_Members.csv" -Encoding UTF8 -NoTypeInformation
 
 ![EntraID](./EntraID_04.png)  
@@ -84,7 +84,7 @@ foreach ($user in $users) {
     }
 }
 
-# CSVに出力
+### CSVに出力
 $result | Export-Csv "<ファイル名>.csv" -NoTypeInformation -Encoding UTF8
 
 ![EntraID](./EntraID_05.png)   
