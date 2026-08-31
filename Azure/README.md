@@ -12,6 +12,8 @@
   - [ExpressRouteメモ](./ExpressRoute/)
 
 - ストレージ
+  - [Azure Files(ストレージ アカウント)](./AzureFiles/)
+  - [Azure File Sync (ストレージ同期サービス)](./AzureFileSync/)
 
 - AWSとAzure接続検証
   - [AWSとAzure接続検証](../AWS to Azure)
