@@ -9,7 +9,8 @@ Windows Server、Linux、AWS、Azure、Microsoft 365、などの構築・運用�
 ## Skills
 
 - Windows Server
-
+- [Windows Server](./WindowsServer/)
+- 
 - Linux
  
 - [AWS](./AWS/)
