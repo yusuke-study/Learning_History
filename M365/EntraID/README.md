@@ -70,7 +70,7 @@ $results | Export-Csv -Path "MailEnabledSecurityGroups_Members.csv" -Encoding UT
 
 下記コマンドを実行する。
 
-# ユーザーと所属グループを取得
+### ユーザーと所属グループを取得
 $users = Get-AzureADUser -All $true
 $result = @()
 
