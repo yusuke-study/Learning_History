@@ -11,22 +11,26 @@ Microsoft Graphを使用したコマンド操作について記載する。
 (2)	Microsoft Graph PowerShell SDK がインストールされているか確認する。
 
 「Get-InstalledModule Microsoft.Graph」を実行する。
- 
+
+![MSGraph](./MSGraph_01.png)
 
 (3)	Microsoft Graph APIに接続する。
 
 「Connect-MgGraph -Scopes Policy.ReadWrite.Authorization」を実行する。
- 
+
+ ![MSGraph](./MSGraph_02.png)
 
 (4)	Microsoft Graph APIからログアウトする。
 
 「Disconnect-MgGraph」を実行する。
- 
+
+ ![MSGraph](./MSGraph_03.png)
 
 (5)	グループ一覧を取得する。
 
 「Get-MgGroup -Filter "groupTypes/any(c:c eq 'Unified')" | Format-Table DisplayName, Id」を実行する。
- 
+
+  ![MSGraph](./MSGraph_04.png)
 
 (6)	ユーザー一覧をcsv出力する。
 
@@ -48,3 +52,7 @@ OnPremisesSyncEnabled：True（同期あり）
 
 文字化け対策として右記を追加する。 -Encoding utf8
 
+  ![MSGraph](./MSGraph_05.png)
+
+
+  
