@@ -30,7 +30,10 @@ Entra IDで使用するコマンド操作について記載する。
 
 下記コマンドを実行する。
 
-Get-AzureADGroup -All $true | Select-Object DisplayName, Mail, MailEnabled, SecurityEnabled | Export-Csv -Encoding Default C:\EntraID_Group.csv
+```powershell
+Get-AzureADGroup -All $true |
+    Select-Object DisplayName, Mail, MailEnabled, SecurityEnabled |
+    Export-Csv -Encoding Default C:\EntraID_Group.csv
 
 ※補足
 
@@ -95,7 +98,10 @@ $result | Export-Csv "<ファイル名>.csv" -NoTypeInformation -Encoding UTF8
 
 下記コマンドを実行する。
 
-Get-AzureADUser | Select-Object ObjectId, UserPrincipalName
+```markdown
+```powershell
+Get-AzureADUser |
+    Select-Object ObjectId, UserPrincipalName
  
 ![EntraID](./EntraID_06.png)   
 
