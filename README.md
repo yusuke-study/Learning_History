@@ -1,4 +1,4 @@
-## Profile
+# Profile
 
 インフラエンジニアとして、
 
@@ -6,7 +6,7 @@ Windows Server、Linux、AWS、Azure、Microsoft 365、などの構築・運用�
 
 本GitHubでは、これまでに取り組んだ内容や、ステータスの確認コマンド等を公開します。
 
-## Skills
+# Skills
 
 - [Windows Server](./WindowsServer/)
 
