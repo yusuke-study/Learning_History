@@ -28,7 +28,9 @@ Entra IDで使用するコマンド操作について記載する。
 
 (5)	グループ一覧をcsv出力する。
 
-「Get-AzureADGroup -All $true | Select-Object DisplayName, Mail, MailEnabled, SecurityEnabled　|export-csv -Encoding default C:\EntraID_Group.csv」を実行する。
+下記コマンドを実行する。
+
+Get-AzureADGroup -All $true | Select-Object DisplayName, Mail, MailEnabled, SecurityEnabled　|export-csv -Encoding default C:\EntraID_Group.csv
 
 ※補足
 
