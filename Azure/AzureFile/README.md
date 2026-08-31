@@ -98,7 +98,7 @@ az storage container create --name <コンテナ名> --account-name <ストレ�
 
 ※--account-keyを使う方法もあるが、セキュリティ的には --auth-mode login が推奨
 
-![AzureFile](./AzureFile_010.png)
+![AzureFile](./AzureFile_10.png)
 
 ![AzureFile](./AzureFile_11.png)
 
