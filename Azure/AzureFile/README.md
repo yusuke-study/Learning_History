@@ -91,8 +91,11 @@ az storage account delete --name <ストレージアカウント名> --resource-
 ![AzureFile](./AzureFile_09.png)
 
 (3)	コンテナを作成する。（Blob Storage）
+
 下記コマンドを実行する。
+
 az storage container create --name <コンテナ名> --account-name <ストレージアカウント名> --auth-mode login
+
 ※--account-keyを使う方法もあるが、セキュリティ的には --auth-mode login が推奨
 
 ![AzureFile](./AzureFile_010.png)
@@ -125,6 +128,7 @@ az role assignment create --assignee <ユーザーのObject IDまたはメール
 下記コマンドを実行する。
 
 az storage blob upload --account-name <ストレージアカウント名> --container-name <コンテナ名> --name <Blob名（保存名）> --file <ローカルファイルのパス> --account-key　<取得したアカウントキー>
+
 ※Blob Data Ownerロールを割り当てたユーザーであれば、--auth-mode loginでも可
 
 ![AzureFile](./AzureFile_15.png)
