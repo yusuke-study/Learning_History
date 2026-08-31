@@ -154,7 +154,8 @@ Microsoft 365 Defender画面の、メールとコラボレーション > ポリ�
 
 DKIMが設定されているかの状態確認を行うコマンドは以下の通りである。
 
-「Get-DkimSigningConfig | Format-List Name,Enabled,Status,Selector1CNAME,Selector2CNAME」を実行する。
+「Get-DkimSigningConfig |
+Format-List Name,Enabled,Status,Selector1CNAME,Selector2CNAME」を実行する。
  
 DMARC登録確認
 
