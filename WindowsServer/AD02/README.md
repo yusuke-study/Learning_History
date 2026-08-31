@@ -111,20 +111,26 @@ ForEach-Object { $_ -replace ",CN=Sites,CN=Configuration,DC=test,DC=local", "" -
 ##	GPO
 
 (1)	GPOを一覧表示する。
+
 下記コマンドを実行する。
+
 Get-GPO -all | Select-Object DisplayName    ※すべてのグループポリシーが表示
 
 ![AD](./AD02_13.png)   
 
 (2)	特定の文字が入力されているGPOのみ表示する。
+
 下記コマンドを実行する。
+
 確認コマンド：Get-GPO -all | Select-Object DisplayName | Where-Object { $_.DisplayName -like "*特定文字" }　　
 
 ![AD](./AD02_14.png)   
 
 
 (3)	GPOをcsv出力する。
+
 下記コマンドを実行する。
+
 Get-GPO -all | Select-Object DisplayName | Where-Object { $_.DisplayName -like "*プリンタ用GPO" } |export-csv -Encoding default C:\Setup\04_プリンタ用GPO.csv
 
 ![AD](./AD02_15.png)  
@@ -134,20 +140,26 @@ Get-GPO -all | Select-Object DisplayName | Where-Object { $_.DisplayName -like "
 ##	グループポリシーをサイトへリンク
 
 (1)	GPOを、サイトにリンクする。
+
 下記コマンドを実行する。
+
 New-GPLink -Name "グループポリシー名" -Target "CN=サイト,CN=Sites,CN=Configuration,DC=test,DC=local"
 
 ![AD](./AD02_16.png)  
 
 (2)	サイトにリンクしたGPOを表示する。
+
 下記コマンドを実行する。
+
 Set-GPLink -Name "GPO名" -Target "CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=test,DC=local" | Select-Object DisplayName,Enabled,Target,Enforcement,Order
 
 ![AD](./AD02_17.png)  
 
 
 (3)	サイトにリンクしたGPOを削除する。　
+
 下記コマンドを実行する。
+
 Remove-GPLink -Name グループポリシー名 -Target "CN=サイト,CN=Sites,CN=Configuration,DC=test,DC=local"
 
 ![AD](./AD02_18.png)  
