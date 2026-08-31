@@ -145,7 +145,7 @@ Uninstall-Module AzureAD
 
 ### AzureADPreview モジュールをインストール
 
-Install-Module AzureADPreview
+「Install-Module AzureADPreview」を実行する。
 
 ![EntraID](./EntraID_13.png)   
  
@@ -159,5 +159,4 @@ Remove-AzureADMSGroup -ID <グループID>
 
 ![EntraID](./EntraID_14.png)   
 
- 
 
