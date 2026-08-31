@@ -23,7 +23,8 @@ Azure File Syncの設定方法について、コマンドとGUIでの操作方�
 下記コマンドを実行する。
 
 az storagesync create --resource-group <リソースグループ名> --name <ストレージ同期サービス名> --location <リージョン>
- 
+
+![AzureFileSync](./AzureFileSync_01.png)
 
 (2)	同期グループを作成する。
 
@@ -31,8 +32,9 @@ az storagesync create --resource-group <リソースグループ名> --name <ス
 
 az storagesync sync-group create --resource-group <リソースグループ名> --storage-sync-service <ストレージ同期サービス名> --name <Sync Group名>
  
+![AzureFileSync](./AzureFileSync_02.png)
 
- 
+![AzureFileSync](./AzureFileSync_03.png)
 
 (3)	Azure File Sync にストレージアカウントを読み取らせるロールの付与を行う。※必要な場合
 
@@ -40,8 +42,9 @@ az storagesync sync-group create --resource-group <リソースグループ名> 
 
 az role assignment create --assignee <Azure File Sync のマネージド ID またはユーザー ID> --role "Storage Account Contributor" --scope /subscriptions/<サブスクリプションID>/resourceGroups/<リソースグループ名>/providers/Microsoft.Storage/storageAccounts/<ストレージアカウント名>
  
+![AzureFileSync](./AzureFileSync_04.png)
 
- 
+![AzureFileSync](./AzureFileSync_05.png)
 
 (4)	クラウドエンドポイントを作成する。
 
@@ -55,8 +58,9 @@ az storagesync sync-group cloud-endpoint create --resource-group <リソース�
 
 ※削除時に必要になる。
  
+![AzureFileSync](./AzureFileSync_06.png)
 
- 
+![AzureFileSync](./AzureFileSync_07.png)
 
 (5)	Windows　serverに、「Storage Sync Agent」をインストールする。
 
@@ -67,7 +71,8 @@ az storagesync sync-group cloud-endpoint create --resource-group <リソース�
 下記コマンドを実行する。
 
 az storagesync registered-server list --resource-group <リソースグループ名> --storage-sync-service <ストレージ同期サービス名>　--query "[].{ServerName:serverName, ID:serverId, OS:serverOSVersion}" --output table
- 
+
+![AzureFileSync](./AzureFileSync_08.png)
 
 (7)	サーバーエンドポイントを作成する。
 
@@ -79,9 +84,11 @@ az storagesync sync-group server-endpoint create --resource-group <リソース�
 
 az storagesync sync-group server-endpoint create --resource-group testResourceGroup_02 --storage-sync-service test-storagesync --sync-group-name test-storagesync-group  --name test-ServerEndpoint --server-id 93a2b931-f233-4b7b-a19e-03b7c33a5909 --server-local-path F:\SyncFolder --cloud-tiering on
  
-
+![AzureFileSync](./AzureFileSync_09.png)
  
+![AzureFileSync](./AzureFileSync_10.png)
 
+![AzureFileSync](./AzureFileSync_11.png)
  
 
 (8)	サーバーエンドポイントを削除する。
@@ -93,7 +100,8 @@ az storagesync sync-group server-endpoint delete --resource-group <リソース�
 例：
 
 az storagesync sync-group server-endpoint delete --resource-group testResourceGroup_02 --storage-sync-service test-storagesync --sync-group-name test-storagesync-group --name test-ServerEndpoint
- 
+
+![AzureFileSync](./AzureFileSync_12.png)
 
 (9)	クラウドエンドポイントを削除する。
 
@@ -105,34 +113,39 @@ az storagesync sync-group cloud-endpoint delete --resource-group <リソース�
 
 az storagesync sync-group cloud-endpoint delete --resource-group testResourceGroup_02 --storage-sync-service test-storagesync --sync-group-name test-storagesync-group --name test-CloudEndpoint
  
+![AzureFileSync](./AzureFileSync_13.png)
 
- 
+![AzureFileSync](./AzureFileSync_14.png)
 
 (10)同期グループを削除する。
 
 下記コマンドを実行する。
 
 az storagesync sync-group delete --resource-group <リソースグループ名> --storage-sync-service <ストレージ同期サービス名> --name <Sync Group 名>
- 
+
+![AzureFileSync](./AzureFileSync_15.png)
 
 (11)登録済みサーバーを登録解除する。
 
 下記コマンドを実行する。
 
 az storagesync registered-server delete --resource-group <リソースグループ名> --storage-sync-service <ストレージ同期サービス名> --server-id <登録済みサーバーのID>
- 
+
+![AzureFileSync](./AzureFileSync_16.png)
 
 (12)ストレージ同期サービスを削除する。
 
 下記コマンドを実行する。
 
 az storagesync delete --resource-group <リソースグループ名> --name <ストレージ同期サービス名>
- 
+
+![AzureFileSync](./AzureFileSync_17.png)
  
-3.4.2.2	GUI操作
+##	GUI操作
 
 (1)	ストレージ同期サービス(Azure File Sync)を作成する。
- 
+
+![AzureFileSync](./AzureFileSync_18.png)
 
 (2)	オンプレ環境のWindows serverにインストールするための、「Azure File Sync エージェント」を下記URLからダウンロードする。
 
@@ -140,7 +153,7 @@ URL: https://www.microsoft.com/en-us/download/details.aspx?id=57159
 
 ※Windows serverのバージョンに合ったものをDLする。
 
-  
+![AzureFileSync](./AzureFileSync_19.png)  
 
 (3)	Windows serverに、「Storage Sync Agent」をインストールする。
 
@@ -148,20 +161,23 @@ URL: https://www.microsoft.com/en-us/download/details.aspx?id=57159
 
 ※Internet Explorer セキュリティ強化の構成をオフにしないと、Microsoftアカウントにブラウザでログインできないことがある。
 
- 　　 
+![AzureFileSync](./AzureFileSync_20.png) 　　 
 
  　　 
 
 (4)	インストール後にAzure Filesとサーバーを同期するための設定を行う。
      　　
+![AzureFileSync](./AzureFileSync_21.png) 　
 
- 
+![AzureFileSync](./AzureFileSync_22.png) 　
 
 (5)	同期されると、「登録済みサーバー」が表示される。
- 
+
+![AzureFileSync](./AzureFileSync_23.png) 　
 
 (6)	同期グループを作成する。
- 
+
+![AzureFileSync](./AzureFileSync_24.png) 
 
 (7)	クラウドエンドポイントとサーバーエンドポイントを作成する。
 
@@ -169,8 +185,9 @@ URL: https://www.microsoft.com/en-us/download/details.aspx?id=57159
 
 ※ファイルの同期のみであれば、Cドライブでも可能である。
  
+![AzureFileSync](./AzureFileSync_25.png) 
 
- 
+![AzureFileSync](./AzureFileSync_26.png) 
 
 (8)	サーバーエンドポイントの正常性が「正常」に変化したら作業完了である。
 
