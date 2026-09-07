@@ -1,7 +1,7 @@
 # Linux
 
 - Linux便利コマンド等
-  - [Linux便利コマンド等](./Linux/)
+  - [Linux便利コマンド等](./command/)
   - [単体試験で確認すべきステータス等](./status/)
 
 - nginx
