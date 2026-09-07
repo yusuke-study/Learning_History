@@ -2,9 +2,11 @@
 
 インフラエンジニアとして、
 
-Windows Server、Linux、AWS、Azure、Microsoft 365、などの構築・運用を経験しています。
+Windows Server、Linux、AWS、Azure、Microsoft 365、などの構築・運用を経験。
 
-本GitHubでは、これまでに取り組んだ内容の一部や、ステータスの確認コマンド等を公開します。
+本GitHubでは、これまでに取り組んだ内容の一部や、ステータスの確認コマンド等を整理中。
+
+これまで培ってきた経験を活かし、現在はAWS / Azureを中心としたクラウドインフラの設計・構築に携わることを目指します。
 
 # Skills
 
@@ -16,8 +18,10 @@ Windows Server、Linux、AWS、Azure、Microsoft 365、などの構築・運用�
  
 - [Azure](./Azure/)
 
-- AWS Azure 共通検証
+- Infrastructure as Code
   - [TerraForm検証](./TerraForm/)
+
+- AWS Azure 共通検証
   - [AWS to Azure検証](./AWS to Azure/)
   - [Cloud Volumes ONTAP検証](./CVO/)
 
