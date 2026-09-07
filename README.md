@@ -12,14 +12,19 @@ Windows Server、Linux、AWS、Azure、Microsoft 365、などの構築・運用�
 
 - [Windows Server](./WindowsServer/)
 
+
 - Linux
- 
+
+
 - [AWS](./AWS/)
+
  
 - [Azure](./Azure/)
 
+
 - Infrastructure as Code
   - [TerraForm検証](./TerraForm/)
+
 
 - AWS Azure 共通検証
   - [AWS to Azure検証](./AWS to Azure/)
