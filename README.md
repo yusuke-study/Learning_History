@@ -11,31 +11,31 @@ Windows Server、Linux、AWS、Azure、Microsoft 365、などの構築・運用�
 # Skills
 
 - [Windows Server](./WindowsServer/)
-
+<br>
 
 - Linux
-
+<br>
 
 - [AWS](./AWS/)
-
+<br>
  
 - [Azure](./Azure/)
-
+<br>
 
 - Infrastructure as Code
   - [TerraForm検証](./TerraForm/)
   - [AWS CDK実行準備](./AWS/CDK/)
   - [AWS CDK動作検証](./AWS/CDK02/)
 
-
+<br>
 - AWS Azure 共通検証
   - [AWS to Azure検証](./AWS to Azure/)
   - [Cloud Volumes ONTAP検証](./CVO/)
-
+<br>
  
 - Microsoft 365
   - [Microsoft 365 コマンド操作等](./M365/) 
-
+<br>
 
 - [Web制作学習](./WebPage/)
 
