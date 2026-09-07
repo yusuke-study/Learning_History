@@ -13,7 +13,7 @@ Windows Server、Linux、AWS、Azure、Microsoft 365、などの構築・運用�
 - [Windows Server](./WindowsServer/)
 <br>
 
-- Linux
+- [Linux](./Limux/)
 <br>
 
 - [AWS](./AWS/)
