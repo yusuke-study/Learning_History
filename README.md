@@ -26,8 +26,8 @@ Windows Server、Linux、AWS、Azure、Microsoft 365、などの構築・運用�
   - [TerraForm検証](./TerraForm/)
   - [AWS CDK実行準備](./AWS/CDK/)
   - [AWS CDK動作検証](./AWS/CDK02/)
-
 <br>
+
 - AWS Azure 共通検証
   - [AWS to Azure検証](./AWS to Azure/)
   - [Cloud Volumes ONTAP検証](./CVO/)
