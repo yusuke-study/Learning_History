@@ -10,3 +10,4 @@
 
 <br>
 
+- Windows Server 各ステータス確認Bat
