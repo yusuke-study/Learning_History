@@ -86,13 +86,13 @@ No.	ステータス名	用途
 
 5	flags	状態フラグ.。
 
-  master：正常なMasterとして認識されている状態
+    master：正常なMasterとして認識されている状態
   
-  s_down：このSentinelから見て異常
+    s_down：このSentinelから見て異常
   
-  o_down：クォーラム成立＝障害確定
+    o_down：クォーラム成立＝障害確定
   
-  failover-in-progress：切替中
+    failover-in-progress：切替中
   
 6	link-pending-commands	未処理コマンド数。（通常0）
 
