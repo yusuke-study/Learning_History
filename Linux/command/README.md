@@ -75,6 +75,8 @@ systemctl get-default
 
 　# ランレベルの変更
 
+systemctl get-default　XXXXX
+
 ![command](./command_09.png)
 
 (7) アカウント設定（共通）の確認
