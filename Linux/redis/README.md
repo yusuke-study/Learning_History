@@ -164,7 +164,7 @@ SENTINEL sentinels mymaster
 
 ※下記は、ステータス打ち分け
 
-※1～1１はMasterのステータスと共通のため省略。
+※1～11はMasterのステータスと共通のため省略。
 
 FlagsはSentinelとなる。
 
