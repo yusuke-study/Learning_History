@@ -33,7 +33,7 @@ Azureを使用するための準備(CLIのログイン方法、サブスクリ�
 
 (4)	ユーザーにサブスクリプション権限を付与する。
 
-「az role assignment create `--assignee` ユーザーのオブジェクトIDまたはUPN --role "Contributor" `--scope` /subscriptions/サブスクリプションID」を実行する。
+「az role assignment create `--assignee` ユーザーのオブジェクトIDまたはUPN --role "ロール名" `--scope` /subscriptions/サブスクリプションID」を実行する。
 
  ![Preparation](./Preparation_04.png)
 
