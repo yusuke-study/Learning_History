@@ -14,6 +14,11 @@ Windows Server、Linux、AWS、Azure、Microsoft 365、などの構築・運用�
 
 <img src="./images/background_03.jpg" align="left" width="300">
 
+<br><br><br><br><br><br><br><br>
+
+
+
+
 # Skills
 
 - [Windows Server](./WindowsServer/)
