@@ -1,7 +1,7 @@
 # Linux
 
 - Linux確認＆便利コマンド等
-  - [Linux便利コマンド等](./command/)
+  - [Linux確認＆便利コマンド等](./command/)
 
 - nginx
   - [nginx](./nginx/)
