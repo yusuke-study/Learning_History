@@ -16,6 +16,7 @@
 - ストレージ
   - [Azure Files(ストレージ アカウント)](./AzureFile/)
   - [Azure File Sync (ストレージ同期サービス)](./AzureFileSync/)
+  - Azure Backup
 <br>
 
 - テンプレート
