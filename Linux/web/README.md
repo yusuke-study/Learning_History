@@ -4,9 +4,7 @@
 
 ![web](./web_01.png)
 
-![web](./web_01.png)
-
-![web](./web_07.png)
+![web](./web_02.png)
 
 (2) redisのデータベースでログイン情報が表示される。
 
