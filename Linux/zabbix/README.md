@@ -64,13 +64,13 @@ Replica設定
 
 ##	Zabbix レプリケーション正常性確認
 
-「mysql -u root -p」でmysqlにアクセスし、以下のコマンドを実行する。
+(1) 「mysql -u root -p」でmysqlにアクセスし、以下のコマンドを実行する。
 
 SHOW REPLICA STATUS\G
 
 ![zabbix](./zabbix_14.png)  
 
-下記3つのステータスを基準に、レプリケーションが正常に動作しているか確認する。
+(2) 下記3つのステータスを基準に、レプリケーションが正常に動作しているか確認する。
 
 Replica_IO_Running        マスター(DSKSZA01)から更新情報を受信できているかを示します。
 
