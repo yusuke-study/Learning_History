@@ -25,6 +25,12 @@ keepalivedとは、Webサーバーのアクセス先となる仮想IP（VIP）�
 
 ![keepalived](./keepalived_07.png)
 
+ヘルスチェックスクリプト
+
+設定ファイル：/etc/keepalived/check_nginx.sh
+
+![keepalived](./keepalived_08.png)
+
 ③ マスター確認
 
 ip a 等でサーバーのIPを確認する。
