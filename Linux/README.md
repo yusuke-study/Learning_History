@@ -11,7 +11,8 @@
   - [redis](./redis/)
 
 - nginx ＋　redis
--   - [nginxとredisを用いたWebサーバーログイン確認等](./nr/)
+  - [nginxとredisを用いたWebサーバーログイン設定](./nr/)
+  - [nginxとredisを用いたWebサーバーログイン確認等](./web/)
 
 - Zabbix
   - [Zabbix](./zabbix/)
