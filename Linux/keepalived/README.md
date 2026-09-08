@@ -34,3 +34,9 @@ ip a 等でサーバーのIPを確認する。
 ![keepalived](./keepalived_05.png)
 
 ![keepalived](./keepalived_06.png)
+
+優先度の高いサーバーのkeepalivedが復旧した際は、通常に戻る。
+
+![keepalived](./keepalived_03.png)
+
+
