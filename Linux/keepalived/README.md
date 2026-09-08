@@ -1,6 +1,6 @@
 #	keepalived
 
-keepalivedとは、Webサーバーのアクセス先となる仮想IP（VIP）を設定し、複数台のサーバーでActive/Standby間で切り替えるのが代表的な使い方である。
+keepalivedとは、Webサーバーのアクセス先となる仮想IP（VIP）を設定し、複数台のサーバーでActive/Standby間で切り替える、サーバーの冗長化・フェイルオーバーが代表的な使い方である。
 
 
 ##	keepalived 設定ファイル　etc
