@@ -15,7 +15,7 @@ Azureを使用するための準備(CLIのログイン方法、サブスクリ�
 
 ※コマンド実行の際に、下記内容でユーザー名とパスワードを指定することも可能である。
 
-　az login `--user` <username> `--password` <password>
+　az login `--user` ユーザー名 `--password` パスワード
 
 ![Preparation](./Preparation_01.png)
 
@@ -27,20 +27,20 @@ Azureを使用するための準備(CLIのログイン方法、サブスクリ�
 
 (3)	ユーザーのオブジェクトIDを取得する。
 
-「az ad user show `--id` <ユーザUPN> `--query` id `--output` tsv」を実行する。
+「az ad user show `--id` ユーザUPN `--query` id `--output` tsv」を実行する。
 
  ![Preparation](./Preparation_03.png)
 
 (4)	ユーザーにサブスクリプション権限を付与する。
 
-「az role assignment create `--assignee` <ユーザーのオブジェクトIDまたはUPN> --role "Contributor" `--scope` /subscriptions/<サブスクリプションID>」を実行する。
+「az role assignment create `--assignee` ユーザーのオブジェクトIDまたはUPN --role "Contributor" `--scope` /subscriptions/サブスクリプションID」を実行する。
 
  ![Preparation](./Preparation_04.png)
 
 
 (5)	ロールの権限内容を表示する。
 
-「az role definition list `--name` "<ロール名>"」を実行する。
+「az role definition list `--name` "ロール名"」を実行する。
  
  ![Preparation](./Preparation_05.png)
 
