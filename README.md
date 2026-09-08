@@ -8,6 +8,8 @@ Windows Server、Linux、AWS、Azure、Microsoft 365、などの構築・運用�
 
 これまで培ってきた経験を活かし、現在はAWS / Azureを中心としたクラウドインフラの設計・構築に携わることを目指します。
 
+※本ページでは、これまでの業務経験・技術経験の中から代表的なものを抜粋して掲載しています。記載内容がすべての経験を網羅するものではありません。
+
 # Skills
 
 - [Windows Server](./WindowsServer/)
