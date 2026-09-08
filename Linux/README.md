@@ -9,7 +9,7 @@
 <br>
 
 - redis
-  - [redis redis-sentinel](./redis/)
+  - [redis＆redis-sentinel](./redis/)
 <br>
 
 - nginx ＋　redis
