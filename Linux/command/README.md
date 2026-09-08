@@ -79,7 +79,7 @@ systemctl get-default　XXXXX
 
 ![command](./command_09.png)
 
-(7) アカウント設定（共通）の確認
+(7) アカウント設定（共通）の確認　#見やすくカスタマイズした場合
 
 awk -F: '($3==0 || $3>=1000 && $3<60000) {
     user=$1; uid=$3; gid=$4; home=$6; shell=$7;
