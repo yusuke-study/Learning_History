@@ -20,26 +20,37 @@
 
 ![rs](./redis_03.png)
 
-④冗長化した際のslave(Replica)には、以下を設定する。  例：「replicaof 192.168.xx.xx 6379」
+④redisサーバーを冗長化した際のslave(Replica)には、以下を設定する。  例：「replicaof 192.168.xx.xx 6379」
 
 ![rs](./redis_04.png)
 
 ##	redis コマンド操作　etc
 
-(1)	Redisに接続する。
+(1)	Redisのバージョン確認
 
-redis-cli -p 26379
+ redis-cli --version
 
-(2)	Redis-Sentinel上で、RedisのMasterを確認する。
+![rs](./redis_05.png)
 
+(2)	Redisのステータス確認
 
-##	インストール　etc
+systemctl status redis-server
 
+![rs](./redis_06.png)
 
+(3)	Redisに接続する。
 
+redis-cli   ※「auth foobared」を設定している場合は、ログイン後に実行する。
 
+![rs](./redis_07.png)
 
+もしくは、redisのIPを指定して接続することも可能。「redis-cli -h xxx.xxx.xx.xx」
 
+(4)	redisサーバーを冗長化した際の冗長性の確認
+
+info replication
+
+![rs](./redis_08.png)
 
 
 
