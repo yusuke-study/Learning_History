@@ -20,6 +20,10 @@
 
 ![rs](./redis_03.png)
 
+④冗長化した際のslave(Replica)には、以下を設定する。  例：「replicaof 192.168.xx.xx 6379」
+
+![rs](./redis_04.png)
+
 ##	redis コマンド操作　etc
 
 (1)	Redisに接続する。
