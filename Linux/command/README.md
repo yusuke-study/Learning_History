@@ -33,9 +33,13 @@ ufw status
 
 ![command](./command_05.png)
 
-　# ファイアウォールの変更
+　# ファイアウォールの有効化
+
+ufw enable
 
 ![command](./command_06.png)
+
+　# ファイアウォールの追加
 
 ![command](./command_07.png)
 
