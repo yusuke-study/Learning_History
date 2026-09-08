@@ -29,6 +29,8 @@ lsblk
 
 (5) ファイアウォールの確認
 
+　# Ubuntuの場合
+
 ufw status
 
 ![command](./command_05.png)
@@ -46,6 +48,24 @@ ufw allow　ポート等
 ufw reload　#再読み込み
 
 ![command](./command_07.png)
+
+　# RHEL等の場合
+
+ステータス確認
+
+systemctl status firewalld
+
+![command](./command_12.png)
+
+firewall-cmd --state
+
+![command](./command_13.png)
+
+許可されているサービス
+
+firewall-cmd --list-all　　#その他コマンド有
+
+![command](./command_14.png)
 
 (6) 起動ランレベルの確認 
 
@@ -72,9 +92,16 @@ awk -F: '($3==0 || $3>=1000 && $3<60000) {
 
 ![command](./command_10.png)
 
-(8) パッケージ一覧(共通)の確認 (Ubuntu) #バージョンを表示しない形式での出力
+(8) パッケージ一覧(共通)の確認
+
+　# Ubuntuの場合　 #バージョンを表示しない形式での出力
 
 dpkg-query -W -f='${binary:Package}\n'　
 
 ![command](./command_11.png)
 
+　# RHEL等の場合
+
+dnf list installed
+
+![command](./command_15.png)
