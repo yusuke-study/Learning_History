@@ -14,5 +14,8 @@
   - [nginxとredisを用いたWebサーバーログイン設定](./nr/)
   - [nginxとredisを用いたWebサーバーログイン確認等](./web/)
 
+- keepalived(ロードバランサー)
+  - [keepalived](./keepalived/)
+  - 
 - Zabbix
   - [Zabbix](./zabbix/)
