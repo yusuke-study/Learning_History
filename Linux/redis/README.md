@@ -56,6 +56,13 @@ info replication
 
 #	redis-sentinel
 
+Redis-Sentinelは、Redisの可用性を高めるための監視・フェイルオーバー機能である。
+
+複数のRedis-SentinelがRedisを監視し、Master障害時にはSlaveを新しいMasterへ自動的に昇格させる。
+
+Sentinelは障害判定やフェイルオーバーに過半数の合意が必要となるため、一般的に3台等の奇数構成で構築する。
+
+
 ##	redis-sentinel 設定ファイル　etc
 
 
