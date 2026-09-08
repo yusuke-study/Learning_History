@@ -9,7 +9,7 @@ keepalivedとは、Webサーバーのアクセス先となる仮想IP（VIP）�
 
 ![keepalived](./keepalived_01.png)
 
-自動でファイルも生成されないため、下記設定ファイルに
+自動でファイルも生成されないため、下記設定ファイルに設定を行う。
 
 設定ファイル：/etc/keepalived/keepalived.conf
 
