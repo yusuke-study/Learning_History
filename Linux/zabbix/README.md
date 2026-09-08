@@ -121,7 +121,7 @@ mysqldump -u root -p zabbix --single-transaction --routines --triggers --events 
 
 ※入力後、Zabbixユーザーのパスワードを入力する。
 
-![zabbix](./zabbix_19.png)  
+
 
 (6)	以下のコマンドを実行し、#1でダンプしたファイルを#2にコピーする。
 
