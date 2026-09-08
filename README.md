@@ -10,6 +10,10 @@ Windows Server、Linux、AWS、Azure、Microsoft 365、などの構築・運用�
 
 ※本ページでは、これまでの業務経験・技術経験の中から代表的なものを抜粋して掲載しています。記載内容がすべての経験を網羅するものではありません。
 
+<img src="./images/background_02.jpg" align="right" width="300">
+
+<img src="./images/background_03.jpg" align="left" width="300">
+
 # Skills
 
 - [Windows Server](./WindowsServer/)
