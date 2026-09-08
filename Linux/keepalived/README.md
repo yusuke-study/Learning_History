@@ -1,15 +1,36 @@
 #	keepalived
 
+keepalivedとは、Webサーバーのアクセス先となる仮想IP（VIP）を設定し、複数台のサーバーでActive/Standby間で切り替えるのが代表的な使い方である。
+
+
 ##	keepalived 設定ファイル　etc
+
+① keepalivedをインストールしただけでは、ステータスがactiveにならない。
+
+![keepalived](./keepalived_01.png)
+
+自動でファイルも生成されないため、下記設定ファイルに
 
 設定ファイル：/etc/keepalived/keepalived.conf
 
-※設定の主なポイント　※要件によって違うため、主要な重要部分のみ解説
+※設定の主なポイント　※要件によって違うため、あくまで設定した方が良いと思われる主要な重要部分のみ記載
 
-①
+① クラスター設定のため、 Masterサーバー、Backupサーバーでそれぞれ設定する。
 
-![keepalived](./keepalived_01.png)
+![keepalived](./keepalived_02.png)
 
-②
+起動時点で優先度が高いサーバーがマスターとなる。
 
-![keepalived](./keepalived_01.png)
+② マスター確認
+
+ip a 等でサーバーのIPを確認する。
+
+![keepalived](./keepalived_03.png)
+
+![keepalived](./keepalived_04.png)
+
+サーバーダウンや、「systemctl stop keepalived」等で、マスターサーバーがダウンした後
+
+![keepalived](./keepalived_05.png)
+
+![keepalived](./keepalived_06.png)
