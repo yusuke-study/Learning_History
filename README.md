@@ -45,3 +45,4 @@ Windows Server、Linux、AWS、Azure、Microsoft 365、などの構築・運用�
 
 
  
+<img src="./images/background.jpg" align="right" width="300">
