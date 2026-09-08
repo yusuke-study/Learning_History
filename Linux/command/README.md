@@ -41,8 +41,11 @@ ufw enable
 
 　# ファイアウォールの追加
 
-![command](./command_07.png)
+ufw allow　ポート等
 
+ufw reload　#再読み込み
+
+![command](./command_07.png)
 
 (6) 起動ランレベルの確認 
 
