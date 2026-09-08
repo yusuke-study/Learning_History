@@ -76,3 +76,35 @@ lib配下には、下記ファイルをインストールしてきて配置す�
 webapps配下にWebの設定ファイルを配置する
 
 
+users.properties
+
+※データベースがなくてもWebにアクセスできる構成を作成する
+
+![nr](./nr_19.png)
+
+web.xml
+
+![nr](./nr_20.png)
+
+index.jsp  
+
+![nr](./nr_20.png)
+
+login.jsp
+
+![nr](./nr_22.png)
+
+※下記省略
+
+logout.jsp
+
+![nr](./nr_23.png)
+
+protected.jsp
+
+![nr](./nr_24.png)
+
+
+※すべてのWen用ファイルは、用途に応じて設定変更する。
+
+例：#1 「Loadbalanser01へようこそ」　⇒　#2 「Loadbalanser02へようこそ」 等
