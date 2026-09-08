@@ -21,6 +21,10 @@ keepalivedとは、Webサーバーのアクセス先となる仮想IP（VIP）�
 
 起動時点で優先度が高いサーバーがマスターとなる。
 
+また、正しく設定された場合にステータスがactiveとなる。
+
+![keepalived](./keepalived_07.png)
+
 ③ マスター確認
 
 ip a 等でサーバーのIPを確認する。
