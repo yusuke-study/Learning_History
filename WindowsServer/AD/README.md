@@ -26,7 +26,7 @@ netdom query fsmo
 
 (4)	FSMOを別サーバー(Active Directory)に移行する
 
-「Move-ADDirectoryServerOperationMasterRole -Identity "<AD移行先ホスト名>" -OperationMasterRole 0,1,2,3,4」コマンドを実行する。 
+「Move-ADDirectoryServerOperationMasterRole -Identity "AD移行先ホスト名" -OperationMasterRole 0,1,2,3,4」コマンドを実行する。 
 
 ![AD](./AD_14.png)   
 
