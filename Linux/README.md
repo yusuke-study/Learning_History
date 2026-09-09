@@ -2,18 +2,22 @@
 
 - Linux確認＆便利コマンド等
   - [Linux確認＆便利コマンド等](./command/)
+
 <br>
 
 - nginx(ロードバランサー用途)
   - [nginx](./nginx/)
+
 <br>
 
 - redis
   - [redis＆redis-sentinel](./redis/)
+
 <br>
 
 - keepalived(フェイルオーバー)
   - [keepalived](./keepalived/) 
+
 <br>
 
 - nginx ＋　redis
