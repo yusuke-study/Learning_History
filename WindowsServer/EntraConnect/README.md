@@ -85,6 +85,8 @@ Synchronization Service Manager　での同期時間の確認も可能。
 
 Active DirectoryからEntra IDへの同期スケジュールの確認、同期間隔の確認を行う際は「Get-ADSyncScheduler」を実行する。
 
+※通常の同期は30分に1回である。
+
 ![EC](./EntraConnect_23.png)
 
 
