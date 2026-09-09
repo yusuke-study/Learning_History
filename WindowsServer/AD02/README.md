@@ -157,7 +157,8 @@ New-GPLink -Name "グループポリシー名" -Target "CN=サイト,CN=Sites,CN
 
 下記コマンドを実行する。
 
-Set-GPLink -Name "GPO名" -Target "CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=test,DC=local" | Select-Object DisplayName,Enabled,Target,Enforcement,Order
+Set-GPLink -Name "GPO名" -Target "CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=test,DC=local" |
+Select-Object DisplayName,Enabled,Target,Enforcement,Order
 
 ![AD](./AD02_17.png)  
 
