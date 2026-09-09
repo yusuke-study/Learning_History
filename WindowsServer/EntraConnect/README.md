@@ -52,6 +52,10 @@ Entra Connectツールのインストール方法
 
 ![EC](./EntraConnect_15.png)
 
+(9) オプション機能を選択する。
+
 ![EC](./EntraConnect_16.png)
+
+(10) インストールを開始する。
 
 ![EC](./EntraConnect_17.png)
