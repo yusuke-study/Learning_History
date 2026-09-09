@@ -6,7 +6,7 @@
 
 DNSフォワーダー設定を行う。※ping 8.8.8.8が応答する場合
 
-Add-DnsServerForwarder -IPAddress 8.8.8.8
+Add-DnsServerForwarder -IPAddress xx.xx.xx.xx
 
 ![DNS](./DNS_02.png)  
 
