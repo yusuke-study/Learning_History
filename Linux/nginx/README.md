@@ -2,7 +2,7 @@
 
 ##	nginx 設定ファイル　etc
 
-通常の　nginxの設定ファイルは「/etc/nginx/nginx.conf」であるが、ロードバランサー用途でnginxを使用する際は、設定方法が異なる。
+通常のnginxの設定ファイルは「/etc/nginx/nginx.conf」であるが、ロードバランサー用途でnginxを使用する際は、設定方法が異なる。
 
 「/etc/nginx/nginx.conf」を使用しても良いが、今回はロードバランサ用途のため、独自に server 定義を行う。
 
