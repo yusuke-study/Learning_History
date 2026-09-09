@@ -12,13 +12,14 @@
   - [redis＆redis-sentinel](./redis/)
 <br>
 
+- keepalived(フェイルオーバー)
+  - [keepalived](./keepalived/) 
+<br>
+
 - nginx ＋　redis
   - [nginxとredisを用いたWebサーバーログイン設定](./nr/)
   - [nginxとredisを用いたWebサーバーログイン確認等](./web/)
-<br>
 
-- keepalived(フェイルオーバー)
-  - [keepalived](./keepalived/)
 <br>
 
 - Zabbix
