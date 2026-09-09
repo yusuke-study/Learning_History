@@ -17,7 +17,7 @@ lsblk
 
 (3) ネットワーク設定の確認
 
-/etc/netplan
+cat /etc/netplan
 
 ![command](./command_03.png)
 
@@ -107,3 +107,16 @@ dpkg-query -W -f='${binary:Package}\n'　
 dnf list installed
 
 ![command](./command_15.png)
+
+(9) logrotate 全体のデフォルト設定の確認
+
+cat /etc/logrotate.conf
+
+![command](./command_16.png)
+
+(10) バイナリログのローテーション確認
+
+cat /etc/logrotate.d/wtmp
+
+![command](./command_17.png)
+
