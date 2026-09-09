@@ -2,9 +2,7 @@
 
 Entra Connectとは、Active Directoryのユーザーを、Entra IDに同期するシステムである。
 
-
-
-Entra Connectツールのインストール方法
+## Entra Connect 設定
 
 (1) Entra管理センターで「AzureADConnect.msi」をインストールする。
 
@@ -61,3 +59,6 @@ Entra Connectツールのインストール方法
 ※同期を行わない場合は「ステージングモード」を選択する。
 
 ![EC](./EntraConnect_17.png)
+
+
+## Entra Connect ユーザー　グループ同期
