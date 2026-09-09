@@ -79,6 +79,12 @@ Synchronization Service Manager　での同期時間の確認も可能。
 
 ![EC](./EntraConnect_21.png)
 
+※補足コマンド
+
+Active DirectoryからEntra IDへの同期スケジュールの確認、同期間隔の確認を行う際は「Get-ADSyncScheduler」を実行する。
+
+![EC](./EntraConnect_22.png)
+
 ![EC](./EntraConnect_22.png)
 
 
