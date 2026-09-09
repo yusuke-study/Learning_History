@@ -8,8 +8,7 @@
 
 <br>
 
-- Entra Connect
-
+- [Entra Connect](./EntraConnect/)
 
 <br>
 
