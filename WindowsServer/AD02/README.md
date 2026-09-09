@@ -114,7 +114,8 @@ ForEach-Object { $_ -replace ",CN=Sites,CN=Configuration,DC=test,DC=local", "" -
 
 下記コマンドを実行する。
 
-Get-GPO -all | Select-Object DisplayName    ※すべてのグループポリシーが表示
+Get-GPO -all |
+Select-Object DisplayName    ※すべてのグループポリシーが表示
 
 ![AD](./AD02_13.png)   
 
@@ -122,7 +123,9 @@ Get-GPO -all | Select-Object DisplayName    ※すべてのグループポリシ
 
 下記コマンドを実行する。
 
-確認コマンド：Get-GPO -all | Select-Object DisplayName | Where-Object { $_.DisplayName -like "*特定文字" }　　
+確認コマンド：Get-GPO -all |
+Select-Object DisplayName |
+Where-Object { $_.DisplayName -like "*特定文字" }　　
 
 ![AD](./AD02_14.png)   
 
@@ -131,7 +134,10 @@ Get-GPO -all | Select-Object DisplayName    ※すべてのグループポリシ
 
 下記コマンドを実行する。
 
-Get-GPO -all | Select-Object DisplayName | Where-Object { $_.DisplayName -like "*プリンタ用GPO" } |export-csv -Encoding default C:\Setup\04_プリンタ用GPO.csv
+Get-GPO -all |
+Select-Object DisplayName |
+Where-Object { $_.DisplayName -like "*プリンタ用GPO" } |
+export-csv -Encoding default C:\Setup\04_プリンタ用GPO.csv
 
 ![AD](./AD02_15.png)  
 
