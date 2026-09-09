@@ -1,6 +1,6 @@
-## DNSフォワーダー
+## DNSフォワーダー設定例
 
-インターネットに出られないとき。
+インターネットに出られないとき。外部ドメインの名前解決を行うため、DNSサーバーにDNSフォワーダーを設定する。
 
 ![DNS](./DNS_01.png)  
 
@@ -10,7 +10,7 @@ Add-DnsServerForwarder -IPAddress 8.8.8.8
 
 ![DNS](./DNS_02.png)  
 
-DNSキャッシュをクリア
+DNSキャッシュをクリアし、名前解決が成功することを確認。
 
 Clear-DnsServerCache
 
