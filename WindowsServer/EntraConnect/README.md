@@ -61,4 +61,8 @@ Entra Connectとは、Active Directoryのユーザーを、Entra IDに同期す�
 ![EC](./EntraConnect_17.png)
 
 
-## Entra Connect ユーザー　グループ同期
+## Entra Connect ユーザー＆グループ同期
+
+(1) 同期対象のOUでユーザーとグループを作成する。
+
+![EC](./EntraConnect_18.png)
