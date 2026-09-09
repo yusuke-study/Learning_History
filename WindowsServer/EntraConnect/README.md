@@ -34,6 +34,8 @@ Entra Connectとは、Active Directoryのユーザーを、Entra IDに同期す�
 
 (6) Active Directryの、Entra Connrct管理用のアカウントを「新しい AD アカウントを作成」を選択して入力する。
 
+※Enterprise Admins,Domain Adminsに所属するアカウントを使用する必要有。
+
 ![EC](./EntraConnect_10.png)
 
 ![EC](./EntraConnect_11.png)
