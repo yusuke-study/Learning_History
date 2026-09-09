@@ -22,21 +22,21 @@ Entra Connectツールのインストール方法
 
 ![EC](./EntraConnect_05.png)
 
-![EC](./EntraConnect_06.png)
-
 (4) パスワードハッシュが基本的には無難。
 
-![EC](./EntraConnect_07.png)
+![EC](./EntraConnect_06.png)
 
 (5) Entra IDのアカウントでログインし、と紐づける
+
+![EC](./EntraConnect_07.png)
 
 ![EC](./EntraConnect_08.png)
 
 ![EC](./EntraConnect_09.png)
 
-![EC](./EntraConnect_10.png)
-
 (6) Active Directryの、Entra Connrct管理用のアカウントを「新しい AD アカウントを作成」を選択して入力する。
+
+![EC](./EntraConnect_10.png)
 
 ![EC](./EntraConnect_11.png)
 
