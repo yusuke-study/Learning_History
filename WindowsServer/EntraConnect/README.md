@@ -40,7 +40,11 @@ Entra Connectツールのインストール方法
 
 ![EC](./EntraConnect_11.png)
 
+(7) UPNを選択する。
+
 ![EC](./EntraConnect_12.png)
+
+(8) 同期するOUを選択する。
 
 ![EC](./EntraConnect_13.png)
 
