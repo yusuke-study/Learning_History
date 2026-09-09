@@ -89,7 +89,7 @@ foreach ($user in $users) {
 }
 
 ### CSVに出力
-$result | Export-Csv "<ファイル名>.csv" -NoTypeInformation -Encoding UTF8
+$result | Export-Csv "ファイル名.csv" -NoTypeInformation -Encoding UTF8
 
 ![EntraID](./EntraID_05.png)   
 
@@ -114,7 +114,7 @@ Get-AzureADUser |
 
 下記コマンドを実行する。
 
-New-AzureADGroup -DisplayName "<表示名>" -MailEnabled $false -SecurityEnabled $true -MailNickName "NotSet"
+New-AzureADGroup -DisplayName "表示名" -MailEnabled $false -SecurityEnabled $true -MailNickName "NotSet"
  
 ![EntraID](./EntraID_09.png)   
  
@@ -124,7 +124,7 @@ New-AzureADGroup -DisplayName "<表示名>" -MailEnabled $false -SecurityEnabled
 
 下記コマンドを実行する。
 
-New-AzureADMSGroup -DisplayName “<表示名>” -MailEnabled $false -MailNickname “<MailNickname>” -SecurityEnabled $true -GroupTypes “DynamicMembership” -MembershipRule ‘<ルール条件>’ -MembershipRuleProcessingState “On”
+New-AzureADMSGroup -DisplayName “表示名” -MailEnabled $false -MailNickname “MailNickname” -SecurityEnabled $true -GroupTypes “DynamicMembership” -MembershipRule ‘ルール条件’ -MembershipRuleProcessingState “On”
 
 メモ：
 
