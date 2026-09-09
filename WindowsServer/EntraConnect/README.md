@@ -66,3 +66,19 @@ Entra Connectとは、Active Directoryのユーザーを、Entra IDに同期す�
 (1) 同期対象のOUでユーザーとグループを作成する。
 
 ![EC](./EntraConnect_18.png)
+
+(2) すぐに同期する場合は「Start-ADSyncSyncCycle -PolicyType Initial」を実行する。
+
+![EC](./EntraConnect_19.png)
+
+Synchronization Service Manager　での同期時間の確認も可能。
+
+![EC](./EntraConnect_20.png)
+
+(3) Entra ID で同期されたことを確認。
+
+![EC](./EntraConnect_21.png)
+
+![EC](./EntraConnect_22.png)
+
+
